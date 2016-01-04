@@ -129,3 +129,54 @@ The metadata section contains xpath values that allow values to be extracted fro
  * title
  * type
 
+
+```
+[manifest]
+# Where the resources live on the web
+base_metadata_uri:		http://www.example.org/path/to/object/ 
+
+# Where the resources live on disk
+base_metadata_dir: 		/home/dmt/Documents/IIIF_Ingest/METS/ 
+
+# Default Image API information
+base_image_uri: 		http://www.example.org/path/to/image/api/ 
+
+iiif_image_info_version:2.0
+iiif_image_info_compliance:2
+
+# options: warn,error,error_on_warning
+debug: 					warn 
+
+label: 					Example Manifest
+id: 					manifest
+description:			This is a longer description of the manifest
+viewingDirection:		left-to-right
+
+[sequence]
+id:						http://www.example.org/path/to/object/sequence/normal
+label:					sequence label
+[canvas]
+id:						page
+label:					Page 
+
+[annotation]
+id:						http://www.example.org/path/to/object/annotation/
+
+[metadata]
+contributor:	//mods:mods/mods:name[@mods:role='contributor']/mods:displayForm/text()
+coverage:		concat(//mods:mods/mods:subject/mods:temporal,' ', //mods:mods/mods:subject/mods:geographic)
+creator:		//mods:mods/mods:name[@mods:role='creator']/mods:displayForm/text()
+date:			//mods:mods/mods:originInfo/mods:dateCreated/text()
+description:	//mods:mods/mods:note/text()
+format:			concat(//mods:mods/mods:physicalDescription/mods:form,' ', //mods:mods/mods:physicalDescription/mods:extent, ' ',  //mods:mods/mods:physicalDescription/mods:extent/@unit, ' ', //mods:mods/mods:physicalDescription/mods:note)
+identifier:		//mods:mods/mods:identifier/text()
+language:		//mods:mods/mods:language/mods:languageTerm/text()
+publisher:		//mods:mods/mods:originInfo/mods:publisher/text()
+relation:		//mods:mods/mods:relatedItem/@displayLabel/text()
+rights:			//mods:mods/mods:accessCondition/text()
+source:
+subject:		//mods:mods/mods:subject/mods:topic/text()
+title:			//mods:mods/mods:titleInfo/mods:title/text()
+type:			//mods:mods/mods:typeOfResource/text()
+
+```
