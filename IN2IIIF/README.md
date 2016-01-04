@@ -111,6 +111,7 @@ Annotation
  * id - annotation id
 
 Metadata
+
 The metadata section contains xpath values that allow values to be extracted from the input file for a default set of Dublin Core properties:
  * contributor
  * coverage
