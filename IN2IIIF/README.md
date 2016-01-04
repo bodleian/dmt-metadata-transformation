@@ -57,7 +57,7 @@ Configuration options
 Command line
 ------------
 
---config 
+--config
 configuration file - location of configuration file
 --input
 input source file - location of input file to be transformed
@@ -77,54 +77,54 @@ The variables defined in the configuration file are copied to the IIIF manifest 
 
 METS
 An example configuration file for METS is shown below, divided into the following sections:
-*manifest
-*sequence
-*canvas
-*annotation
-*metadata
+ *manifest
+ *sequence
+ *canvas
+ *annotation
+ *metadata
 
 Manifest
 
-*base_metadata_uri - Where the resources live on the web
-*base_metadata_dir -  Where the resources live on disk
-*base_image_uri - Default Image API information
-*iiif_image_info_version
-*iiif_image_info_compliance
-*debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
-*label - human-readable label for manifest
-*id - identifier for manifest
-*description - description of manifest
-*viewingDirection - viewing direction of image
+ *base_metadata_uri - Where the resources live on the web
+ *base_metadata_dir -  Where the resources live on disk
+ *base_image_uri - Default Image API information
+ *iiif_image_info_version
+ *iiif_image_info_compliance
+ *debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
+ *label - human-readable label for manifest
+ *id - identifier for manifest
+ *description - description of manifest
+ *viewingDirection - viewing direction of image
 
 Sequence
 
-*id - sequence id
-*label - sequence label
+ *id - sequence id
+ *label - sequence label
 
 Canvas
 
-*id - canvas id
-*label - canvas label
+ *id - canvas id
+ *label - canvas label
 
 Annotation
 
-*id - annotation id
+ *id - annotation id
 
 Metadata
 The metadata section contains xpath values that allow values to be extracted from the input file for a default set of Dublin Core properties:
-*contributor
-*coverage
-*creator
-*date
-*description
-*format
-*identifier
-*language
-*publisher
-*relation
-*rights
-*source
-*subject
-*title
-*type
+ *contributor
+ *coverage
+ *creator
+ *date
+ *description
+ *format
+ *identifier
+ *language
+ *publisher
+ *relation
+ *rights
+ *source
+ *subject
+ *title
+ *type
 
