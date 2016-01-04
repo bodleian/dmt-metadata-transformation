@@ -118,10 +118,13 @@ class Mets2iiif(In2iiif):
                      result = doc.xpath(xpath , namespaces={'mets': 'http://www.loc.gov/METS/', "mods": "http://www.loc.gov/mods/v3"})
                      
                      if result:
-                         if type(result) == str:
+                         # single string result returned abc
+                         if type(result) == str: 
                             value = result.strip()
                          else:
-                             value = result[0].strip() 
+                             # list of results returned ['abc', 'def']
+                             for item in result:
+                                 value += item.strip() + ' ' 
                          if value != "":     
                             dictMetadata[label] = value
             
@@ -190,10 +193,7 @@ class Mets2iiif(In2iiif):
             
             self._image(canvas, annotation, item, counter)
             
-            
-            
-        
-        
+  
      def _annotation(self, canvas, canvas_id):
          """Define annotation for canvas."""
          
