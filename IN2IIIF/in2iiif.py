@@ -1,11 +1,14 @@
+#!/usr/bin/python2.7
+# in2iiif.py by Tanya Gray Jones [tanya.gray@bodleian.ox.ac.uk]
+# This is a transformation script for various formats to IIIF API Manifest version 2.0
+
 from factory import ManifestFactory
 import ConfigParser
 import ast
 import argparse
 
-# Implemntation of Borg design pattern - an object-oriented way to provide global variables 
 
-
+def main(): pass
 
 class One:
     """One class (Borg design pattern) making class attributes global."""
@@ -23,16 +26,16 @@ class GlobalConfig(One): # inherits from the One class
      
      def __init__(self, **kwargs):
          One.__init__(self)
-         # Update the attribute dictionary by inserting a new key-value pair defined in argument
+         # Update the attribute dictionary by inserting new key-value pair(s) defined in argument
          self._shared_state.update(kwargs)
      
      def __setitem__(self, key, value):
-         # Update the attribute dictionary by inserting a new key-value pair
+         # Update the attribute dictionary by inserting a new key-value pair or updating value of existing key-value pair
          self._shared_state[key] = value
          
      def __getitem__(self, key):
-         # Returns a value in the dictionary using a key
-         value = self._shared_state[key]  
+         # Returns a value in the dictionary using a key, or None if key not found
+         value = self._shared_state.get(key, None)  
          return value   
          
      def __str__(self):
@@ -46,17 +49,19 @@ class In2iiif():
          
          arg = GlobalConfig() # instantiate GlobalConfig class to hold global variables
             
-
     def setFactoryProperties(self, fac):
          """Sets the ManifestFactory Factory properties."""
          arg = GlobalConfig() # instantiate GlobalConfig class to hold global variables
          
          # set attributes for ManifestFactory instance
-         fac.set_base_metadata_uri(arg.manifest_base_metadata_uri) # Where the resources live on the web
-         fac.set_base_metadata_dir(arg.manifest_base_metadata_dir) # Where the resources live on disk
-         fac.set_base_image_uri(arg.manifest_base_image_uri) # Default Image API information
-         fac.set_iiif_image_info(arg.manifest_iiif_image_info_version,arg.manifest_iiif_image_info_compliance) # Version, ComplianceLevel
-         fac.set_debug(arg.debug) 
+         try:
+             fac.set_base_metadata_uri(arg.manifest_base_metadata_uri) # Where the resources live on the web
+             fac.set_base_metadata_dir(arg.manifest_base_metadata_dir) # Where the resources live on disk
+             fac.set_base_image_uri(arg.manifest_base_image_uri) # Default Image API information
+             fac.set_iiif_image_info(arg.manifest_iiif_image_info_version,arg.manifest_iiif_image_info_compliance) # Version, ComplianceLevel
+             fac.set_debug(arg.debug)         
+         except:
+             print("You need to ensure the following parameters are set in the configuration file: base_metadata_dir, base_image_uri, iiif_image_info_version, iiif_image_info_compliance, debug.")
     
     def setManifestProperties(self, manifest):
          """Sets the ManifestFactory Manifest's properties."""
@@ -107,10 +112,11 @@ class In2iiif():
          
          except IOError as e:
              print('Cannot read configuration file: ', e)
+             sys.exit(0)
          
          except Exception as e:
-             print('Problem encountered adding values in the configuration file to the global dictionary: ', e)
-                              
+             print('Error when adding values from the configuration file to the global dictionary: ', e)
+             sys.exit(0)                 
         
     def parseArguments(self):
          """Parses command line arguments and adds values to GlobalConfig attribute dictionary"""
@@ -139,7 +145,8 @@ class In2iiif():
              arguments = parser.parse_args()
          except Exception as e:
              print('Problem encountered with reading command line arguments: ', e)
-             
+             sys.exit(0)
+        
          # Add command line arguments to the global dictionary using GlobalConfig
          try:
              GlobalConfig(config = arguments.config )
@@ -150,5 +157,8 @@ class In2iiif():
              # GlobalConfig(output = arguments.output ) 
          except Exception as e:
              print('Problem encountered with adding command line arguments to global variables: ', e)
-                 
+             sys.exit(0)    
+
+if __name__ == "__main__": main()
+
   

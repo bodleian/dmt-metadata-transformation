@@ -1,3 +1,7 @@
+#!/usr/bin/python2.7
+# mets2iiif.py by Tanya Gray Jones [tanya.gray@bodleian.ox.ac.uk]
+# This is a transformation script for METS to IIIF API Manifest version 2.0
+
 from factory import ManifestFactory
 import ConfigParser
 import ast
@@ -10,40 +14,57 @@ from io import StringIO, BytesIO
 
 execfile('in2iiif.py')
 
+def main():
+    
+    transformer = Mets2iiif()   # create an object that is an instance of Mets2iiif class
+    
+    factory = transformer.factory() # create ManifestFactory factory
+     
+    manifest = transformer.manifest(factory) # define manifest
+         
+    sequence = transformer.sequence(manifest) # define sequence
+         
+    structMap = transformer.getMetsFileStructMap()  # read METS file structMap
+         
+    transformer.canvas(sequence, structMap) # define canvases, annotations and images
+         
+    transformer.outputManifest(manifest) # write to file
+
 
 class Mets2iiif(In2iiif):
      """Transforms METS to IIIF using ManifestFactory and in2iiif.""" 
      
      def __init__(self, **kwargs):
-         """Gets attributes from command line and config file and creates IIIF manifest using ManifestFactory."""
-          
-         self.initSettings() # read config file and command line args and add to global vars
-       
-         factory = self.initFactory() # create ManifestFactory factory
-         
-         manifest = self.initManifest(factory) # define manifest
-         
-         sequence = self.initSequence(manifest) # define sequence
-         
-         structMap = self.getMetsFileStructMap()  # read METS file structMap
-         
-         self.initCanvas(sequence, structMap) # define canvases, annotations and images
-         
-         self.outputManifest(manifest) # write to file
-          
-          
-     def initSettings(self):
-         """Reads command line arguments and config file and adds to global variables"""
+         """Constructor - sets global variables using command-line arguments and config file."""
          
          self.parseArguments()   # parse command line arguments and add to global variables
-        
          self.parseConfig()      # parse config file and add to global variables
-         
-         self.parseConfigMetadata() # parse config file and add metadata settings to global variables
+         self._parseConfigMetadata() # parse config file and add metadata settings to global variables
+                 
              
+     def _parseConfigMetadata(self):
+         """Reads config file and extracts metadata properties to global variables."""
+         
+         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
+         config = ConfigParser.ConfigParser() # config file parser
+         
+         try:
+             config.read(arg.config) # read configuration file defined in command line arguments
+             metadataProperties = config.options('metadata') # get metadata section of config file
+         
+             # iterate through each metadata property defined in the section and assign value to global variable with name constructed from prefix 'metadata' plus name of metadata property
+             for property in metadataProperties:    
+                 arg['metadata_'+ str(property)] = config.get('metadata', property)
+                 arg['metadata'] = arg.metadata + '|' + str(property) # also append name of metadata property to a global variable called "metadata"
+             
+         except Exception as e:
+             print("A problem was encountered reading the configuration file specified:", e)
+             sys.exit(0)
+         
                
-     def initFactory(self):
+     def factory(self):
          """Initalizes manifest factory and set properties"""
+         
          factory = ManifestFactory() # instance of ManifestFactory
          
          self.setFactoryProperties(factory) # set properties of ManifestFactory using global variables
@@ -51,7 +72,7 @@ class Mets2iiif(In2iiif):
          return factory    
              
              
-     def initManifest(self, factory):    
+     def manifest(self, factory):    
          """Initializes manifest and sets manifest properties"""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
@@ -60,11 +81,11 @@ class Mets2iiif(In2iiif):
          manifest = factory.manifest( ident=arg.manifest_id, label= arg.manifest_label)
          
          self.setManifestProperties(manifest) # set ManifestFactory manifest properties using global vars
-         self.setMetadata(manifest) # set ManifestFactory manifest metadata block using global vars
+         self._setMetadata(manifest) # set ManifestFactory manifest metadata block using global vars
                
          return manifest      
                
-     def setMetadata(self, manifest):
+     def _setMetadata(self, manifest):
          """Sets metadata block of manifest."""
          
          arg = GlobalConfig() # global variables
@@ -109,7 +130,7 @@ class Mets2iiif(In2iiif):
              manifest.set_metadata(dictMetadata)      
           
           
-     def initSequence(self, manifest):
+     def sequence(self, manifest):
          """Defines sequence for the manifest."""
          
         # assumption is that there is one sequence per manifest
@@ -140,8 +161,9 @@ class Mets2iiif(In2iiif):
              manifest.toFile(compact=False)
 
 
-     def initCanvas(self, sequence, structMap):
+     def canvas(self, sequence, structMap):
          """Define canvases for manifest using METS file structMap."""
+         
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
          
          counter = 0 # counter for canvas label and id
@@ -164,51 +186,48 @@ class Mets2iiif(In2iiif):
             canvas = sequence.canvas(ident = canvas_id, label = canvas_label)
             
             # annotation
-            annotation = self.initAnnotation(canvas, canvas_id)
+            annotation = self._annotation(canvas, canvas_id)
             
-            self.initImage(canvas, annotation, item, counter)
+            self._image(canvas, annotation, item, counter)
             
             
             
         
         
-     def initAnnotation(self, canvas, canvas_id):
+     def _annotation(self, canvas, canvas_id):
          """Define annotation for canvas."""
-         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-         # annotation
          
+         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
+                  
          annotation = canvas.annotation()
         
          if arg.annotation_id != "":
              annotation.id = arg.annotation_id + canvas_id
-
          return annotation        
      
      
-     def initImage(self, canvas, annotation, item, counter):    
+     def _image(self, canvas, annotation, item, counter):    
          """Define image for annotation."""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
             
-         image_location = self.getImageLocation(item)
+         image_location = self._getImageLocation(item)
          
          # image - assumption - one image per canvas
          image = annotation.image("p%s" % counter, iiif=True)
-        
         
          self.setImageProperties(image, image_location)
         
          self.setCanvasProperties(canvas, image)
         
                  
-     def getImageLocation(self, item):
+     def _getImageLocation(self, item):
          """Determine image location."""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-         image_location = ""
          
          # determine whether to get images from local directory or via mets 
-            # use arg image_src directory mets_file and image_dir 
+         # use arg image_src directory mets_file and image_dir 
             
          if arg.image_src == 'directory':
                 # image information is from images in directory specified by image_dir
@@ -226,43 +245,25 @@ class Mets2iiif(In2iiif):
 
      def getMetsFileStructMap(self):
          """Gets the structMap section of a METS file."""
-         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-         file = open(arg.input, 'r') # open mets file for reading
-         doc = etree.parse(file) # read file into etree for xpath queries
-         file.close() # close mets file
          
+         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
+         
+         try:
+             file = open(arg.input, 'r') # open mets file for reading
+             doc = etree.parse(file) # read file into etree for xpath queries
+             file.close() # close mets file
+         except Exception as e:
+             print("Error when opening or parsing METS file:", e)
+             sys.exit(0)
+             
          xpath = "//mets:structMap/mets:div/mets:div"
          xml = doc.xpath(xpath, namespaces={'mets': 'http://www.loc.gov/METS/'})
          
          return xml
-         
-        
-        
-        
 
-    
 
-    
      
-     
-     
-    
-    
-     def parseConfigMetadata(self):
-         """"""
-         arg = GlobalConfig()
-         config = ConfigParser.ConfigParser() # config file parser
-         config.read(arg.config) # read configuration file defined in command line arguments
-         
-         metadataProperties = config.options('metadata')
-         
-         for property in metadataProperties:    
-             arg['metadata_'+ str(property)] = config.get('metadata', property)
-             arg['metadata'] = arg.metadata + '|' + str(property)
-         
-         
-    
+
+if __name__ == "__main__": main()
 
 
-In2iiif() # create a new instance of In2iiif class
-Mets2iiif()   # create a new instance of Mets2iiif class
