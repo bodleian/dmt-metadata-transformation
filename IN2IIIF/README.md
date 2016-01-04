@@ -77,11 +77,11 @@ The variables defined in the configuration file are copied to the IIIF manifest 
 
 METS
 An example configuration file for METS is shown below, divided into the following sections:
- *manifest
- *sequence
- *canvas
- *annotation
- *metadata
+ * manifest
+ * sequence
+ * canvas
+ * annotation
+ * metadata
 
 Manifest
 
