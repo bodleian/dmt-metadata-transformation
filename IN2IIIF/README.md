@@ -30,6 +30,10 @@ The in2iiif.py file is not called directly, but must be imported by another pyth
 
 Mets2iiif
 ---------
+Mets2iiif.py is a file that transforms METS/MODS to IIIF presentation manifest. Mets2iiif.py imports in2iiif.py. 
+
+
+
 
 ```bash
 usage: mets2iiif.py [-h] --config CONFIG --input INPUT --image_src IMAGE_SRC
