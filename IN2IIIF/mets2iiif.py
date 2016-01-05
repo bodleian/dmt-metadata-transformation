@@ -94,6 +94,8 @@ class Mets2iiif(In2iiif):
          properties = metadata.split('|') # create array from string
          dictMetadata = {} # create dictionary to hold values retrieved from mets file
         
+         doc= ""
+         
          try:
              file = open(arg.input, 'r')   # read mets file
          except IOError as e:
@@ -108,25 +110,59 @@ class Mets2iiif(In2iiif):
          # iterate through array of metadata properties defined in the config file
          # extract values from the METS file using xpath
          for property in properties:
-             label = property
-             if label != '':
-                 key = 'metadata_' + property
-                 xpath = arg[key]  # get xpath for property
+             if property != '':
+                 value  = ""
+                 language = ""
+                 script = ""
+                 dictMetadata[property] = ''
                  
+                 xpath = arg['metadata_' + property]  # get xpath for property
                  if xpath != "":
-                     # use xpath to extract corresponding value from the mets file
+                     # use xpath to extract corresponding string or node values from the mets file
                      result = doc.xpath(xpath , namespaces={'mets': 'http://www.loc.gov/METS/', "mods": "http://www.loc.gov/mods/v3"})
                      
-                     if result:
-                         # single string result returned abc
-                         if type(result) == str: 
-                            value = result.strip()
+                     # iterate through items in list returned - either string value or element
+                     for item in result:
+
+                         if type(item) == str: 
+                             # string value
+                             # support there being only one string value as result of concat xpath statement 
+                             dictMetadata[property] = item
                          else:
-                             # list of results returned ['abc', 'def']
-                             for item in result:
-                                 value += item.strip() + ' ' 
-                         if value != "":     
-                            dictMetadata[label] = value
+                             # 'element
+                                 
+                             value = item.text # get string value
+            
+                             # check if language attribute exists
+                             language = item.xpath('@xml:lang')
+                             if len(language) > 0:
+                                     lang = language[0]
+                                     # check if script attribute exists
+                                     scriptQuery = item.xpath("@script")
+                                     script = scriptQuery[0]
+                                     # if script attribute exists append value to language
+                                     if script != '':
+                                         lang += '-' + script
+                                     
+                                     # get existing dictionary value for property
+                                     existingValues = dictMetadata[property]
+                                     if len(existingValues) == 0:
+                                         # if dictionary entry does not exist then create list value
+                                        dictMetadata[property] = []
+                                         
+                                     dict = {'@value': value, '@language': lang}
+                                     # update dictionary
+                                     dictMetadata[property].append(dict) 
+                                 
+                             else:
+                                 # if no language attribute exists then use different construct for property value
+                                     existingValue = dictMetadata[property]
+                                     # add delimiter if concatenating values
+                                     if existingValue != '':
+                                         existingValue += ';'
+                                     # update dictionary     
+                                     dictMetadata[property] = existingValue + value 
+                                      
             
          # set metadata block for manifest if values have been extracted from the METS file
          if bool(dictMetadata):
