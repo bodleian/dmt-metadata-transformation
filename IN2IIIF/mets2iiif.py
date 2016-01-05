@@ -271,12 +271,23 @@ class Mets2iiif(In2iiif):
          else:
                 # image information derived from mets file           
                 # get item id to retrieve file name
-                item_id = item.xpath('mets:fptr[1]/@FILEID', namespaces={'mets': 'http://www.loc.gov/METS/'})
-                xpathImageLocation = "//mets:fileSec//mets:file[@ID='" + item_id[0] +"']/mets:FLocat/@xlink:href"
-                image_location = doc.xpath(xpathImageLocation, namespaces={'mets': 'http://www.loc.gov/METS/', 'xlink':'http://www.w3.org/1999/xlink'})
-                image_location = image_location[0]
                 
-         return image_location        
+                try:
+                    file = open(arg.input, 'r') # open mets file for reading
+                    doc = etree.parse(file) # read file into etree for xpath queries
+                except:
+                    print('Unable to open mets file', + arg.input)
+                    sys.exit(0)
+                
+                try:    
+                    item_id = item.xpath('mets:fptr[1]/@FILEID', namespaces={'mets': 'http://www.loc.gov/METS/'})
+                    xpathImageLocation = "//mets:fileSec//mets:file[@ID='" + item_id[0] +"']/mets:FLocat/@xlink:href"
+                    image_location = doc.xpath(xpathImageLocation, namespaces={'mets': 'http://www.loc.gov/METS/', 'xlink':'http://www.w3.org/1999/xlink'})
+                    image_location = image_location[0]
+                    return image_location    
+                except:
+                    print('Unable to determine image location from mets file')
+                    sys.exit(0)
 
 
      def getMetsFileStructMap(self):

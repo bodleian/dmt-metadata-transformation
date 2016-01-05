@@ -6,7 +6,8 @@ from factory import ManifestFactory
 import ConfigParser
 import ast
 import argparse
-
+import os.path
+import sys
 
 def main(): pass
 
@@ -78,7 +79,15 @@ class In2iiif():
     
     def setImageProperties(self, img, imagefile):
          """Sets the ManifestFactory Image properties."""   
-         img.set_hw_from_file(imagefile) 
+
+         if os.path.isfile(imagefile) == True:
+             img.set_hw_from_file(imagefile) 
+         else:
+             print('The image file does not exist: ' + imagefile )
+             sys.exit(0)    
+             
+         
+         
          # OR if you have a IIIF service:
          #  img.set_hw_from_iiif()
     
