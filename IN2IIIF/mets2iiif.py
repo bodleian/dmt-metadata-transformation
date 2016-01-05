@@ -119,7 +119,7 @@ class Mets2iiif(In2iiif):
                  xpath = arg['metadata_' + property]  # get xpath for property
                  if xpath != "":
                      # use xpath to extract corresponding string or node values from the mets file
-                     result = doc.xpath(xpath , namespaces={'mets': 'http://www.loc.gov/METS/', "mods": "http://www.loc.gov/mods/v3"})
+                     result = doc.xpath(xpath , namespaces={'goobi': 'http://meta.goobi.org/v1.5.1/', 'mets': 'http://www.loc.gov/METS/', "mods": "http://www.loc.gov/mods/v3"})
                      
                      # iterate through items in list returned - either string value or element
                      for item in result:
