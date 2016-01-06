@@ -195,10 +195,18 @@ class Mets2iiif(In2iiif):
          
          # should json output be compact?
          if arg.compact == 'True':
-             manifest.toFile()
+             data = manifest.toString()
+             
          else:
-             manifest.toFile(compact=False)
-
+             data = manifest.toString(compact=False)
+         try:
+             
+             fh = file(arg.output, 'w')
+             fh.write(data)
+             fh.close()
+         except Exception as e:
+             print('Problem writing manifest to file', e)
+             sys.exit(0)
 
      def canvas(self, sequence, structMap):
          """Define canvases for manifest using METS file structMap."""

@@ -36,7 +36,7 @@ Mets2iiif.py is a file that transforms METS/MODS to IIIF presentation manifest. 
 
 
 ```bash
-usage: mets2iiif.py [-h] --config CONFIG --input INPUT --image_src IMAGE_SRC
+usage: mets2iiif.py [-h] --config CONFIG --output OUTPUT --input INPUT --image_src IMAGE_SRC
                     [--image_dir IMAGE_DIR] [--compact COMPACT]
 ```
 
@@ -49,6 +49,7 @@ python mets2iiif.py
 --image_src directory 
 --image_dir /home/dmt/Documents/IIIF_Ingest/images/book.jpg 
 --compact False
+--output /home/dmt/Documents/manifest.json
 ```
 
 Configuration options
@@ -67,6 +68,9 @@ image source - directory or mets_file
 location of image directory (if source folder used)
 --compact
 should json be compact or human-readable
+--output
+location of output file
+
 ```
 Configuration file 
 ------------------

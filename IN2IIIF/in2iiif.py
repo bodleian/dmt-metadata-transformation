@@ -134,12 +134,8 @@ class In2iiif():
 
          #POSITIONAL/REQUIRED ARGUMENTS
          parser.add_argument("--config", help="configuration file", required="True")
-         parser.add_argument("--input",  help="input source file", required="True")
-         
-         # requirement for software was to allow output directory to be defined, however,
-         # manifest factory doesen't appear to allow output file location to be specified   
-         # parser.add_argument("output", help="output destination file")
-         
+         parser.add_argument("--input",  help="input source file", required="True")  
+         parser.add_argument("--output", help="output destination file")
          parser.add_argument("--image_src",  help="image source: directory | mets_file", required="True")
 
          #OPTIONAL ARGUMENTS
@@ -160,10 +156,11 @@ class In2iiif():
          try:
              GlobalConfig(config = arguments.config )
              GlobalConfig(input = arguments.input)
+             GlobalConfig(output = arguments.output)
              GlobalConfig(image_src = arguments.image_src )
              GlobalConfig(image_dir = arguments.image_dir )
              GlobalConfig(compact = arguments.compact)
-             # GlobalConfig(output = arguments.output ) 
+ 
          except Exception as e:
              print('Problem encountered with adding command line arguments to global variables: ', e)
              sys.exit(0)    
