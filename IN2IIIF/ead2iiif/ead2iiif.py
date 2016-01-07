@@ -1,22 +1,24 @@
 #!/usr/bin/python2.7
 # mets2iiif.py by Tanya Gray Jones [tanya.gray@bodleian.ox.ac.uk]
-# This is a transformation script for METS to IIIF API Manifest version 2.0
+# This is a transformation script for EAD to IIIF API Manifest version 2.0
+
+import imp
+factory = imp.load_source('factory', '../factory.py')
+
 
 from factory import ManifestFactory
 import ConfigParser
 import ast
 import argparse
 import libxml2, sys
-
-
 from lxml import etree
 from io import StringIO, BytesIO
-
-execfile('in2iiif.py')
+ 
+execfile('../in2iiif.py')
 
 def main():
     
-    transformer = Mets2iiif()   # create an object that is an instance of Mets2iiif class
+    transformer = Ead2iiif()   # create an object that is an instance of Ead2iiif class
     
     factory = transformer.factory() # create ManifestFactory factory
      
@@ -24,15 +26,15 @@ def main():
          
     sequence = transformer.sequence(manifest) # define sequence
          
-    structMap = transformer.getMetsFileStructMap()  # read METS file structMap
+    
          
-    transformer.canvas(sequence, structMap) # define canvases, annotations and images
+    #transformer.canvas(sequence, structMap) # define canvases, annotations and images
          
     transformer.outputManifest(manifest) # write to file
 
 
-class Mets2iiif(In2iiif):
-     """Transforms METS to IIIF using ManifestFactory and in2iiif.""" 
+class Ead2iiif(In2iiif):
+     """Transforms EAD v3.0 to IIIF using ManifestFactory and in2iiif.""" 
      
      def __init__(self, **kwargs):
          """Constructor - sets global variables using command-line arguments and config file."""
@@ -276,49 +278,16 @@ class Mets2iiif(In2iiif):
          if arg.image_src == 'directory':
                 # image information is from images in directory specified by image_dir
                image_location = arg.image_dir
+               return image_location
          else:
-                # image information derived from mets file           
-                # get item id to retrieve file name
+               pass
                 
-                try:
-                    file = open(arg.input, 'r') # open mets file for reading
-                    doc = etree.parse(file) # read file into etree for xpath queries
-                except:
-                    print('Unable to open mets file', + arg.input)
-                    sys.exit(0)
-                
-                try:    
-                    item_id = item.xpath('mets:fptr[1]/@FILEID', namespaces={'mets': 'http://www.loc.gov/METS/'})
-                    xpathImageLocation = "//mets:fileSec//mets:file[@ID='" + item_id[0] +"']/mets:FLocat/@xlink:href"
-                    image_location = doc.xpath(xpathImageLocation, namespaces={'mets': 'http://www.loc.gov/METS/', 'xlink':'http://www.w3.org/1999/xlink'})
-                    image_location = image_location[0]
-                    return image_location    
-                except:
-                    print('Unable to determine image location from mets file')
-                    sys.exit(0)
 
 
-     def getMetsFileStructMap(self):
-         """Gets the structMap section of a METS file."""
-         
-         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-         
-         try:
-             file = open(arg.input, 'r') # open mets file for reading
-             doc = etree.parse(file) # read file into etree for xpath queries
-             file.close() # close mets file
-         except Exception as e:
-             print("Error when opening or parsing METS file:", e)
-             sys.exit(0)
-             
-         xpath = "//mets:structMap/mets:div/mets:div"
-         xml = doc.xpath(xpath, namespaces={'mets': 'http://www.loc.gov/METS/'})
-         
-         return xml
+     
 
 
      
 
 if __name__ == "__main__": main()
-
 

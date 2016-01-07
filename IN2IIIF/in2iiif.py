@@ -18,8 +18,7 @@ class One:
 
     def __init__(self):
         self.__dict__ = self._shared_state # Make it an attribute dictionary
-        
-        
+              
         
 class GlobalConfig(One): # inherits from the One class
      """GlobalConfig class shares all its attributes among its various instances."""

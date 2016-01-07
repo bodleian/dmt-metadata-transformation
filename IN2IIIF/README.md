@@ -21,6 +21,12 @@ ImageMagick or Python Image Library
 Use of ManifestFactory requires the use of ImageMagick or Python Image Library if image dimensions are to be determined programmatically.
 
 
+Setup
+=====
+
+git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git 
+cd IN2IIIF
+pip install -r requirements.txt
 
 
 
