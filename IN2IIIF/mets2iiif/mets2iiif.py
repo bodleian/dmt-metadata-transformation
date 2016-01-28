@@ -182,7 +182,7 @@ class Mets2iiif(In2iiif):
          
          # if sequence_id defined in global variables use this
          if arg.sequence_id != "":
-             sequence.id = arg.sequence_id
+             sequence.id = arg.sequence_id % (arg.manifest_id, arg.sequence_name)
          # if seqeunce label defined in global variables use this    
          if arg.sequence_label != "":
             sequence.label = arg.sequence_label     
@@ -227,9 +227,9 @@ class Mets2iiif(In2iiif):
                 canvas_id = arg.canvas_id +"-" + str(counter) # or if not present, use canvas id prefix defined in config
             
             if item.attrib['ORDERLABEL']:
-                 canvas_label = item.attrib['ORDERLABEL'] # set canvas lablel to orderlabel attribute
+                 canvas_label = item.attrib['ORDERLABEL'] # set canvas label to orderlabel attribute
             else:
-                canvas_label = arg.canvas_label+" " + str(counter) # or if not present, use canvas label prefix defined in config
+                canvas_label = arg.canvas_label +" " + str(counter) # or if not present, use canvas label prefix defined in config
         
             # canvas
             canvas = sequence.canvas(ident = canvas_id, label = canvas_label)
@@ -247,8 +247,28 @@ class Mets2iiif(In2iiif):
                   
          annotation = canvas.annotation()
         
-         if arg.annotation_id != "":
-             annotation.id = arg.annotation_id + canvas_id
+         # construct annotation id from base path and xpath defined in the config file
+         if ((arg.annotation_id_path != "") and (arg.annotation_uri != "")):
+              
+              # open mets file 
+              try:
+                    file = open(arg.input, 'r') # open mets file for reading
+                    doc = etree.parse(file) # read file into etree for xpath queries
+                    
+              except:
+                    print('Unable to open mets file ',  arg.input)
+                    sys.exit(0)
+             
+              # get annotation id using xpath
+              try:             
+                  annotation_id_path = (arg.annotation_id_path %  canvas_id)
+                  annotation_id_list = doc.xpath(annotation_id_path, namespaces={'mets': 'http://www.loc.gov/METS/', 'xlink':'http://www.w3.org/1999/xlink'})
+                  annotation.id = arg.annotation_uri % (arg.manifest_id, annotation_id_list[0]) # set id property for annotation
+                 
+              except:
+                    print('Problem with annotation id xpath ', annotation_id_path)
+                    sys.exit(0)
+              
          return annotation        
      
      
@@ -262,6 +282,7 @@ class Mets2iiif(In2iiif):
          # image - assumption - one image per canvas
          image = annotation.image("p%s" % counter, iiif=True)
         
+         
          self.setImageProperties(image, image_location)
         
          self.setCanvasProperties(canvas, image)
@@ -287,12 +308,14 @@ class Mets2iiif(In2iiif):
                     file = open(arg.input, 'r') # open mets file for reading
                     doc = etree.parse(file) # read file into etree for xpath queries
                 except:
-                    print('Unable to open mets file', + arg.input)
+                    print('Unable to open mets file',  arg.input)
                     sys.exit(0)
                 
                 try:    
                     item_id = item.xpath('mets:fptr[1]/@FILEID', namespaces={'mets': 'http://www.loc.gov/METS/'})
-                    xpathImageLocation = "//mets:fileSec//mets:file[@ID='" + item_id[0] +"']/mets:FLocat/@xlink:href"
+                    #xpathImageLocation = arg.image_location_path + "mets:file[@ID='" + item_id[0] +"']/mets:FLocat/@xlink:href"
+                    xpathImageLocation = arg.image_location_path % item_id[0]
+                    
                     image_location = doc.xpath(xpathImageLocation, namespaces={'mets': 'http://www.loc.gov/METS/', 'xlink':'http://www.w3.org/1999/xlink'})
                     image_location = image_location[0]
                     return image_location    

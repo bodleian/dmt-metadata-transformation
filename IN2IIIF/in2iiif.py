@@ -55,7 +55,7 @@ class In2iiif():
          
          # set attributes for ManifestFactory instance
          try:
-             fac.set_base_metadata_uri(arg.manifest_base_metadata_uri) # Where the resources live on the web
+             fac.set_base_metadata_uri(arg.manifest_uri + arg.manifest_id) # Where the resources live on the web
              fac.set_base_metadata_dir(arg.manifest_base_metadata_dir) # Where the resources live on disk
              fac.set_base_image_uri(arg.manifest_base_image_uri) # Default Image API information
              fac.set_iiif_image_info(arg.manifest_iiif_image_info_version,arg.manifest_iiif_image_info_compliance) # Version, ComplianceLevel
@@ -101,21 +101,25 @@ class In2iiif():
          
              # pass values to instance of GlobalConfig as arguments, that will add them to dictionary
              GlobalConfig(   
-                    manifest_base_metadata_uri = config.get('manifest','base_metadata_uri'),
+                    manifest_uri = config.get('manifest','uri'),
+                    manifest_id = config.get('manifest','id'),
                     manifest_base_metadata_dir = config.get('manifest','base_metadata_dir'),
                     manifest_base_image_uri = config.get('manifest','base_image_uri'),
                     manifest_iiif_image_info_version = config.get('manifest','iiif_image_info_version'),
                     manifest_iiif_image_info_compliance = config.get('manifest','iiif_image_info_compliance'),
                     debug = config.get('manifest','debug'),
-                    manifest_id = config.get('manifest','id'),
                     manifest_label = config.get('manifest','label'),
                     manifest_description = config.get('manifest','description'),
                     manifest_viewingDirection = config.get('manifest','viewingDirection'),
                     sequence_id = config.get('sequence','id'),
+                    sequence_name = config.get('sequence','name'),
                     sequence_label = config.get('sequence','label'),
+                    
                     canvas_id = config.get('canvas','id'),
                     canvas_label = config.get('canvas','label'),
-                    annotation_id = config.get('annotation','id'),
+                    annotation_uri = config.get('annotation','uri'),
+                    annotation_id_path = config.get('annotation', 'id_path'),
+                    image_location_path = config.get('image', 'location_path'),
                     metadata = '')
          
          except IOError as e:
@@ -163,6 +167,9 @@ class In2iiif():
          except Exception as e:
              print('Problem encountered with adding command line arguments to global variables: ', e)
              sys.exit(0)    
+ 
+        
+
 
 if __name__ == "__main__": main()
 
