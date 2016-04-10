@@ -1,0 +1,583 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/standards/premis/ http://www.loc.gov/standards/premis/v2/premis-v2-0.xsd http://www.loc.gov/standards/mix/ http://www.loc.gov/standards/mix/mix.xsd" OBJID="urn:uuid:5386480e-a54d-4fcc-ab6e-6360f6c171a8">
+   <mets:metsHdr CREATEDATE="2016-04-05T14:38:15">
+      <mets:agent OTHERTYPE="SOFTWARE" ROLE="CREATOR" TYPE="OTHER">
+         <mets:name>Goobi - ugh-1.10-ugh-2.0.0-10-g8f2555a - 11−August−2014</mets:name>
+         <mets:note>Goobi</mets:note>
+      </mets:agent>
+   </mets:metsHdr>
+   <mets:dmdSec ID="DMDLOG_0000">
+      <mets:mdWrap MDTYPE="MODS">
+         <mets:xmlData>
+            <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+               <mods:originInfo>
+                  <mods:place>
+                     <mods:placeTerm type="text">[North Africa?]</mods:placeTerm>
+                  </mods:place>
+                  <mods:dateCreated encoding="w3cdtf" keyDate="yes" point="start">1701</mods:dateCreated>
+                  <mods:dateCreated encoding="w3cdtf" point="end">1800</mods:dateCreated>
+               </mods:originInfo>
+               <mods:titleInfo>
+                  <mods:title>Miscellany (Poems on religious subjects)</mods:title>
+               </mods:titleInfo>
+               <mods:identifier type="PPNanalog">Neubauer 2563</mods:identifier>
+               <mods:recordInfo>
+                  <mods:recordIdentifier source="gbv-ppn">1452598088645</mods:recordIdentifier>
+               </mods:recordInfo>
+               <mods:classification authority="GDZ">PolonskyHebrew</mods:classification>
+               <mods:language>
+                  <mods:languageTerm authority="iso639-2b" type="code">Judaeo-Arabic</mods:languageTerm>
+               </mods:language>
+               <mods:location>
+                  <mods:physicalLocation type="shelfmark">MS. Oppenheim Add. 8° 71</mods:physicalLocation>
+               </mods:location>
+            </mods:mods>
+         </mets:xmlData>
+      </mets:mdWrap>
+   </mets:dmdSec>
+   <mets:amdSec ID="AMD">
+      <mets:rightsMD ID="RIGHTS">
+         <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="DVRIGHTS">
+            <mets:xmlData>
+               <dv:rights xmlns:dv="http://dfg-viewer.de/">
+                  <dv:owner>Bodleian Libraries</dv:owner>
+                  <dv:ownerLogo>logo.png</dv:ownerLogo>
+                  <dv:ownerSiteURL>http://bodleian.ox.ac.uk/rights/</dv:ownerSiteURL>
+                  <dv:ownerContact>imaging@bodleian.ox.ac.uk</dv:ownerContact>
+               </dv:rights>
+            </mets:xmlData>
+         </mets:mdWrap>
+      </mets:rightsMD>
+      <mets:digiprovMD ID="DIGIPROV">
+         <mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="DVLINKS">
+            <mets:xmlData>
+               <dv:links xmlns:dv="http://dfg-viewer.de/">
+                  <dv:reference/>
+                  <dv:presentation/>
+               </dv:links>
+            </mets:xmlData>
+         </mets:mdWrap>
+      </mets:digiprovMD>
+   </mets:amdSec>
+   <mets:fileSec>
+      <mets:fileGrp USE="full">
+         <mets:file ID="FILE_0001_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/38889ecf-4093-40de-bdaa-222239223c62/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0002_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/9d2805b6-7f8c-4713-8b4c-2fe2c1989acb/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0003_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/e06c64d8-6d24-4141-b67f-4f967c2ea4fb/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0004_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6877ce04-22f6-4977-8a7f-78cab9ad38a2/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0005_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/1ff62d3c-4703-4f7b-b55e-b832b4875f20/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0006_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/ab98b5ca-869c-4521-9eaf-6875e164afa1/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0007_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6ac71a57-1a0a-46c5-aeae-44c8d613e284/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0008_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/73f0598e-16d7-4b73-8c8d-5e17d4b3271d/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0009_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/89fdd5cd-f4f8-4501-8a93-a87a180bf3cd/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0010_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/736bd8c6-ca33-47ea-8066-6972f59df302/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0011_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/c3d28a79-c5b4-4477-ab18-e13e27412f12/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0012_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/8090dc1a-8ff1-4656-b4b4-e857c4683996/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0013_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/dc60b180-7b26-410b-9908-572222d602ed/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0014_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/85c9c274-5b8f-4143-a47a-45e7e2abb5fb/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0015_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/105d164f-89dd-4d9f-924f-e6106ca2f12a/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0016_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/d1248170-d4ea-476c-8407-89c229e76850/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0017_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6b240bcb-79a0-466d-8ba2-3fd05bfe14ea/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0018_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/2cf73890-1f92-4d59-9129-1df507d0bc1b/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0019_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/03c48cd1-9676-4ffb-8ce0-c18dd9538363/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0020_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/d0bac4a2-6208-4c33-aa47-766bbc26269a/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0021_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6fe73c2d-79f1-4b7b-a682-00e2dca1cef0/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0022_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/10871eab-efa8-42dd-a024-30429a15a38f/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0023_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/b0fbe188-3f9f-4631-9b39-dfcc7d954917/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0024_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/434a65ef-6fea-421f-aefb-c7d22ab82214/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0025_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/534e30ee-c4dc-4f0b-a185-050ab13f4af1/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0026_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/ab5e3cee-8f20-4d48-95f7-de42d2505f92/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0027_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/912c6513-0819-418d-93e2-ae3583485502/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0028_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/dc7e558f-96db-4351-8a4c-6743e1b15612/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0029_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/4f8087b3-d5d7-4263-b641-c4d78296e498/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0030_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/cd661b50-a56d-4828-900f-7b2033218a07/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0031_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/a535be66-69fd-44b4-8b1b-0b9b4e12786c/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0032_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/fe598cf8-4a00-482b-af9d-aa7c9926fa6e/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0033_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/fac51c6d-8a53-4054-ba46-e18d4976a434/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0034_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/5edabc94-e2cb-48fb-ae9a-93610c2ae668/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0035_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/d6c5ca95-89a3-4d14-9ee6-f397acdd8cca/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0036_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/2a958190-d200-4d84-881b-31285ad1a49d/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0037_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6fd0953b-3bbe-469e-a32d-c10e5fd37bf7/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0038_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/a1173f98-1285-49e0-ad47-b1c95e1526ab/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0039_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6129d1fa-e0ac-48b4-8676-0c471bb408a9/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0040_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/fa54cc0f-c6f4-492f-b78a-44bae1d8559d/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0041_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/4b8de34d-3b19-484c-8f06-414cbc8e5025/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0042_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/7d317ae6-292f-44bb-89f6-51ec7181c3f0/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0043_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/7395c701-d54c-45ce-b0b7-9c255901f826/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0044_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/aec27aba-2929-4b5d-a266-094a470c82aa/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0045_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/0d5bffaa-d4ed-4fcd-847e-6ea1deff880a/full.jpg"/>
+         </mets:file>
+         <mets:file ID="FILE_0046_full" MIMETYPE="image/jpeg">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/a2136675-33f1-4061-a9e7-fe28ad87a020/full.jpg"/>
+         </mets:file>
+      </mets:fileGrp>
+      <mets:fileGrp USE="full_lossless">
+         <mets:file ID="FILE_0001_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/38889ecf-4093-40de-bdaa-222239223c62/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0002_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/9d2805b6-7f8c-4713-8b4c-2fe2c1989acb/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0003_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/e06c64d8-6d24-4141-b67f-4f967c2ea4fb/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0004_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6877ce04-22f6-4977-8a7f-78cab9ad38a2/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0005_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/1ff62d3c-4703-4f7b-b55e-b832b4875f20/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0006_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/ab98b5ca-869c-4521-9eaf-6875e164afa1/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0007_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6ac71a57-1a0a-46c5-aeae-44c8d613e284/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0008_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/73f0598e-16d7-4b73-8c8d-5e17d4b3271d/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0009_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/89fdd5cd-f4f8-4501-8a93-a87a180bf3cd/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0010_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/736bd8c6-ca33-47ea-8066-6972f59df302/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0011_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/c3d28a79-c5b4-4477-ab18-e13e27412f12/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0012_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/8090dc1a-8ff1-4656-b4b4-e857c4683996/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0013_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/dc60b180-7b26-410b-9908-572222d602ed/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0014_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/85c9c274-5b8f-4143-a47a-45e7e2abb5fb/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0015_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/105d164f-89dd-4d9f-924f-e6106ca2f12a/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0016_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/d1248170-d4ea-476c-8407-89c229e76850/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0017_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6b240bcb-79a0-466d-8ba2-3fd05bfe14ea/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0018_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/2cf73890-1f92-4d59-9129-1df507d0bc1b/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0019_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/03c48cd1-9676-4ffb-8ce0-c18dd9538363/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0020_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/d0bac4a2-6208-4c33-aa47-766bbc26269a/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0021_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6fe73c2d-79f1-4b7b-a682-00e2dca1cef0/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0022_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/10871eab-efa8-42dd-a024-30429a15a38f/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0023_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/b0fbe188-3f9f-4631-9b39-dfcc7d954917/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0024_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/434a65ef-6fea-421f-aefb-c7d22ab82214/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0025_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/534e30ee-c4dc-4f0b-a185-050ab13f4af1/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0026_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/ab5e3cee-8f20-4d48-95f7-de42d2505f92/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0027_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/912c6513-0819-418d-93e2-ae3583485502/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0028_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/dc7e558f-96db-4351-8a4c-6743e1b15612/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0029_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/4f8087b3-d5d7-4263-b641-c4d78296e498/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0030_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/cd661b50-a56d-4828-900f-7b2033218a07/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0031_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/a535be66-69fd-44b4-8b1b-0b9b4e12786c/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0032_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/fe598cf8-4a00-482b-af9d-aa7c9926fa6e/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0033_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/fac51c6d-8a53-4054-ba46-e18d4976a434/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0034_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/5edabc94-e2cb-48fb-ae9a-93610c2ae668/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0035_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/d6c5ca95-89a3-4d14-9ee6-f397acdd8cca/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0036_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/2a958190-d200-4d84-881b-31285ad1a49d/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0037_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6fd0953b-3bbe-469e-a32d-c10e5fd37bf7/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0038_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/a1173f98-1285-49e0-ad47-b1c95e1526ab/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0039_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/6129d1fa-e0ac-48b4-8676-0c471bb408a9/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0040_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/fa54cc0f-c6f4-492f-b78a-44bae1d8559d/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0041_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/4b8de34d-3b19-484c-8f06-414cbc8e5025/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0042_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/7d317ae6-292f-44bb-89f6-51ec7181c3f0/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0043_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/7395c701-d54c-45ce-b0b7-9c255901f826/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0044_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/aec27aba-2929-4b5d-a266-094a470c82aa/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0045_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/0d5bffaa-d4ed-4fcd-847e-6ea1deff880a/full_lossless.jp2"/>
+         </mets:file>
+         <mets:file ID="FILE_0046_full_lossless" MIMETYPE="image/jpeg2000">
+            <mets:FLocat xmlns:xlink="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlink:href="https://databank.ora.ox.ac.uk/Imaging/datasets/a2136675-33f1-4061-a9e7-fe28ad87a020/full_lossless.jp2"/>
+         </mets:file>
+      </mets:fileGrp>
+   </mets:fileSec>
+   <mets:structMap TYPE="LOGICAL">
+      <mets:div ADMID="AMD" DMDID="DMDLOG_0000" ID="LOG_0000" LABEL="Miscellany (Poems on religious subjects)" TYPE="manuscript"/>
+   </mets:structMap>
+   <mets:structMap TYPE="PHYSICAL">
+      <mets:div ID="PHYS_0000" TYPE="physSequence">
+         <mets:div ID="PHYS_0001" ORDER="1" ORDERLABEL="Upper cover" TYPE="page" CONTENTIDS="urn:uuid:38889ecf-4093-40de-bdaa-222239223c62">
+            <mets:fptr FILEID="FILE_0001_full"/>
+            <mets:fptr FILEID="FILE_0001_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0002" ORDER="2" ORDERLABEL="Inside upper cover" TYPE="page" CONTENTIDS="urn:uuid:9d2805b6-7f8c-4713-8b4c-2fe2c1989acb">
+            <mets:fptr FILEID="FILE_0002_full"/>
+            <mets:fptr FILEID="FILE_0002_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0003" ORDER="3" ORDERLABEL="1st upper flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:e06c64d8-6d24-4141-b67f-4f967c2ea4fb">
+            <mets:fptr FILEID="FILE_0003_full"/>
+            <mets:fptr FILEID="FILE_0003_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0004" ORDER="4" ORDERLABEL="1st upper flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:6877ce04-22f6-4977-8a7f-78cab9ad38a2">
+            <mets:fptr FILEID="FILE_0004_full"/>
+            <mets:fptr FILEID="FILE_0004_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0005" ORDER="5" ORDERLABEL="2nd upper flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:1ff62d3c-4703-4f7b-b55e-b832b4875f20">
+            <mets:fptr FILEID="FILE_0005_full"/>
+            <mets:fptr FILEID="FILE_0005_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0006" ORDER="6" ORDERLABEL="2nd upper flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:ab98b5ca-869c-4521-9eaf-6875e164afa1">
+            <mets:fptr FILEID="FILE_0006_full"/>
+            <mets:fptr FILEID="FILE_0006_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0007" ORDER="7" ORDERLABEL="3rd upper flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:6ac71a57-1a0a-46c5-aeae-44c8d613e284">
+            <mets:fptr FILEID="FILE_0007_full"/>
+            <mets:fptr FILEID="FILE_0007_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0008" ORDER="8" ORDERLABEL="3rd upper flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:73f0598e-16d7-4b73-8c8d-5e17d4b3271d">
+            <mets:fptr FILEID="FILE_0008_full"/>
+            <mets:fptr FILEID="FILE_0008_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0009" ORDER="9" ORDERLABEL="4th upper flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:89fdd5cd-f4f8-4501-8a93-a87a180bf3cd">
+            <mets:fptr FILEID="FILE_0009_full"/>
+            <mets:fptr FILEID="FILE_0009_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0010" ORDER="10" ORDERLABEL="4th upper flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:736bd8c6-ca33-47ea-8066-6972f59df302">
+            <mets:fptr FILEID="FILE_0010_full"/>
+            <mets:fptr FILEID="FILE_0010_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0011" ORDER="11" ORDERLABEL="1r" TYPE="page" CONTENTIDS="urn:uuid:c3d28a79-c5b4-4477-ab18-e13e27412f12">
+            <mets:fptr FILEID="FILE_0011_full"/>
+            <mets:fptr FILEID="FILE_0011_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0012" ORDER="12" ORDERLABEL="1v" TYPE="page" CONTENTIDS="urn:uuid:8090dc1a-8ff1-4656-b4b4-e857c4683996">
+            <mets:fptr FILEID="FILE_0012_full"/>
+            <mets:fptr FILEID="FILE_0012_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0013" ORDER="13" ORDERLABEL="2r" TYPE="page" CONTENTIDS="urn:uuid:dc60b180-7b26-410b-9908-572222d602ed">
+            <mets:fptr FILEID="FILE_0013_full"/>
+            <mets:fptr FILEID="FILE_0013_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0014" ORDER="14" ORDERLABEL="2v" TYPE="page" CONTENTIDS="urn:uuid:85c9c274-5b8f-4143-a47a-45e7e2abb5fb">
+            <mets:fptr FILEID="FILE_0014_full"/>
+            <mets:fptr FILEID="FILE_0014_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0015" ORDER="15" ORDERLABEL="4r" TYPE="page" CONTENTIDS="urn:uuid:105d164f-89dd-4d9f-924f-e6106ca2f12a">
+            <mets:fptr FILEID="FILE_0015_full"/>
+            <mets:fptr FILEID="FILE_0015_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0016" ORDER="16" ORDERLABEL="4v" TYPE="page" CONTENTIDS="urn:uuid:d1248170-d4ea-476c-8407-89c229e76850">
+            <mets:fptr FILEID="FILE_0016_full"/>
+            <mets:fptr FILEID="FILE_0016_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0017" ORDER="17" ORDERLABEL="3r" TYPE="page" CONTENTIDS="urn:uuid:6b240bcb-79a0-466d-8ba2-3fd05bfe14ea">
+            <mets:fptr FILEID="FILE_0017_full"/>
+            <mets:fptr FILEID="FILE_0017_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0018" ORDER="18" ORDERLABEL="3v" TYPE="page" CONTENTIDS="urn:uuid:2cf73890-1f92-4d59-9129-1df507d0bc1b">
+            <mets:fptr FILEID="FILE_0018_full"/>
+            <mets:fptr FILEID="FILE_0018_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0019" ORDER="19" ORDERLABEL="5r" TYPE="page" CONTENTIDS="urn:uuid:03c48cd1-9676-4ffb-8ce0-c18dd9538363">
+            <mets:fptr FILEID="FILE_0019_full"/>
+            <mets:fptr FILEID="FILE_0019_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0020" ORDER="20" ORDERLABEL="5v" TYPE="page" CONTENTIDS="urn:uuid:d0bac4a2-6208-4c33-aa47-766bbc26269a">
+            <mets:fptr FILEID="FILE_0020_full"/>
+            <mets:fptr FILEID="FILE_0020_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0021" ORDER="21" ORDERLABEL="6r" TYPE="page" CONTENTIDS="urn:uuid:6fe73c2d-79f1-4b7b-a682-00e2dca1cef0">
+            <mets:fptr FILEID="FILE_0021_full"/>
+            <mets:fptr FILEID="FILE_0021_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0022" ORDER="22" ORDERLABEL="6v" TYPE="page" CONTENTIDS="urn:uuid:10871eab-efa8-42dd-a024-30429a15a38f">
+            <mets:fptr FILEID="FILE_0022_full"/>
+            <mets:fptr FILEID="FILE_0022_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0023" ORDER="23" ORDERLABEL="7r" TYPE="page" CONTENTIDS="urn:uuid:b0fbe188-3f9f-4631-9b39-dfcc7d954917">
+            <mets:fptr FILEID="FILE_0023_full"/>
+            <mets:fptr FILEID="FILE_0023_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0024" ORDER="24" ORDERLABEL="7v" TYPE="page" CONTENTIDS="urn:uuid:434a65ef-6fea-421f-aefb-c7d22ab82214">
+            <mets:fptr FILEID="FILE_0024_full"/>
+            <mets:fptr FILEID="FILE_0024_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0025" ORDER="25" ORDERLABEL="8r" TYPE="page" CONTENTIDS="urn:uuid:534e30ee-c4dc-4f0b-a185-050ab13f4af1">
+            <mets:fptr FILEID="FILE_0025_full"/>
+            <mets:fptr FILEID="FILE_0025_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0026" ORDER="26" ORDERLABEL="8v" TYPE="page" CONTENTIDS="urn:uuid:ab5e3cee-8f20-4d48-95f7-de42d2505f92">
+            <mets:fptr FILEID="FILE_0026_full"/>
+            <mets:fptr FILEID="FILE_0026_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0027" ORDER="27" ORDERLABEL="9r" TYPE="page" CONTENTIDS="urn:uuid:912c6513-0819-418d-93e2-ae3583485502">
+            <mets:fptr FILEID="FILE_0027_full"/>
+            <mets:fptr FILEID="FILE_0027_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0028" ORDER="28" ORDERLABEL="9v" TYPE="page" CONTENTIDS="urn:uuid:dc7e558f-96db-4351-8a4c-6743e1b15612">
+            <mets:fptr FILEID="FILE_0028_full"/>
+            <mets:fptr FILEID="FILE_0028_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0029" ORDER="29" ORDERLABEL="10r" TYPE="page" CONTENTIDS="urn:uuid:4f8087b3-d5d7-4263-b641-c4d78296e498">
+            <mets:fptr FILEID="FILE_0029_full"/>
+            <mets:fptr FILEID="FILE_0029_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0030" ORDER="30" ORDERLABEL="10v" TYPE="page" CONTENTIDS="urn:uuid:cd661b50-a56d-4828-900f-7b2033218a07">
+            <mets:fptr FILEID="FILE_0030_full"/>
+            <mets:fptr FILEID="FILE_0030_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0031" ORDER="31" ORDERLABEL="11r" TYPE="page" CONTENTIDS="urn:uuid:a535be66-69fd-44b4-8b1b-0b9b4e12786c">
+            <mets:fptr FILEID="FILE_0031_full"/>
+            <mets:fptr FILEID="FILE_0031_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0032" ORDER="32" ORDERLABEL="11v" TYPE="page" CONTENTIDS="urn:uuid:fe598cf8-4a00-482b-af9d-aa7c9926fa6e">
+            <mets:fptr FILEID="FILE_0032_full"/>
+            <mets:fptr FILEID="FILE_0032_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0033" ORDER="33" ORDERLABEL="12r" TYPE="page" CONTENTIDS="urn:uuid:fac51c6d-8a53-4054-ba46-e18d4976a434">
+            <mets:fptr FILEID="FILE_0033_full"/>
+            <mets:fptr FILEID="FILE_0033_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0034" ORDER="34" ORDERLABEL="12v" TYPE="page" CONTENTIDS="urn:uuid:5edabc94-e2cb-48fb-ae9a-93610c2ae668">
+            <mets:fptr FILEID="FILE_0034_full"/>
+            <mets:fptr FILEID="FILE_0034_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0035" ORDER="35" ORDERLABEL="1st lower flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:d6c5ca95-89a3-4d14-9ee6-f397acdd8cca">
+            <mets:fptr FILEID="FILE_0035_full"/>
+            <mets:fptr FILEID="FILE_0035_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0036" ORDER="36" ORDERLABEL="1st lower flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:2a958190-d200-4d84-881b-31285ad1a49d">
+            <mets:fptr FILEID="FILE_0036_full"/>
+            <mets:fptr FILEID="FILE_0036_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0037" ORDER="37" ORDERLABEL="2nd lower flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:6fd0953b-3bbe-469e-a32d-c10e5fd37bf7">
+            <mets:fptr FILEID="FILE_0037_full"/>
+            <mets:fptr FILEID="FILE_0037_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0038" ORDER="38" ORDERLABEL="2nd lower flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:a1173f98-1285-49e0-ad47-b1c95e1526ab">
+            <mets:fptr FILEID="FILE_0038_full"/>
+            <mets:fptr FILEID="FILE_0038_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0039" ORDER="39" ORDERLABEL="3rd lower flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:6129d1fa-e0ac-48b4-8676-0c471bb408a9">
+            <mets:fptr FILEID="FILE_0039_full"/>
+            <mets:fptr FILEID="FILE_0039_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0040" ORDER="40" ORDERLABEL="3rd lower flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:fa54cc0f-c6f4-492f-b78a-44bae1d8559d">
+            <mets:fptr FILEID="FILE_0040_full"/>
+            <mets:fptr FILEID="FILE_0040_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0041" ORDER="41" ORDERLABEL="4th lower flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:4b8de34d-3b19-484c-8f06-414cbc8e5025">
+            <mets:fptr FILEID="FILE_0041_full"/>
+            <mets:fptr FILEID="FILE_0041_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0042" ORDER="42" ORDERLABEL="4th lower flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:7d317ae6-292f-44bb-89f6-51ec7181c3f0">
+            <mets:fptr FILEID="FILE_0042_full"/>
+            <mets:fptr FILEID="FILE_0042_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0043" ORDER="43" ORDERLABEL="5th lower flyleaf recto" TYPE="page" CONTENTIDS="urn:uuid:7395c701-d54c-45ce-b0b7-9c255901f826">
+            <mets:fptr FILEID="FILE_0043_full"/>
+            <mets:fptr FILEID="FILE_0043_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0044" ORDER="44" ORDERLABEL="5th lower flyleaf verso" TYPE="page" CONTENTIDS="urn:uuid:aec27aba-2929-4b5d-a266-094a470c82aa">
+            <mets:fptr FILEID="FILE_0044_full"/>
+            <mets:fptr FILEID="FILE_0044_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0045" ORDER="45" ORDERLABEL="Inside lower cover" TYPE="page" CONTENTIDS="urn:uuid:0d5bffaa-d4ed-4fcd-847e-6ea1deff880a">
+            <mets:fptr FILEID="FILE_0045_full"/>
+            <mets:fptr FILEID="FILE_0045_full_lossless"/>
+         </mets:div>
+         <mets:div ID="PHYS_0046" ORDER="46" ORDERLABEL="Lower cover" TYPE="page" CONTENTIDS="urn:uuid:a2136675-33f1-4061-a9e7-fe28ad87a020">
+            <mets:fptr FILEID="FILE_0046_full"/>
+            <mets:fptr FILEID="FILE_0046_full_lossless"/>
+         </mets:div>
+      </mets:div>
+   </mets:structMap>
+   <mets:structLink>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0001" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0002" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0003" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0004" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0005" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0006" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0007" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0008" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0009" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0010" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0011" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0012" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0013" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0014" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0015" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0016" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0017" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0018" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0019" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0020" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0021" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0022" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0023" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0024" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0025" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0026" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0027" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0028" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0029" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0030" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0031" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0032" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0033" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0034" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0035" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0036" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0037" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0038" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0039" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0040" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0041" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0042" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0043" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0044" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0045" xlink:from="LOG_0000"/>
+      <mets:smLink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:to="PHYS_0046" xlink:from="LOG_0000"/>
+   </mets:structLink>
+</mets:mets>
