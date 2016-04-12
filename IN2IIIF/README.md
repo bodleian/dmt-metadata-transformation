@@ -94,20 +94,26 @@ An example configuration file for METS is shown below, divided into the followin
  * metadata
 
 Manifest
-
- * base_metadata_uri - Where the resources live on the web
+  
+ * uri - Where the resources live on the web
+ * id - identifier for manifest
+ 
  * base_metadata_dir -  Where the resources live on disk
+ 
  * base_image_uri - Default Image API information
  * iiif_image_info_version
  * iiif_image_info_compliance
+ 
  * debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
+ 
+ 
  * label - human-readable label for manifest
- * id - identifier for manifest
  * description - description of manifest
  * viewingDirection - viewing direction of image
 
 Sequence
 
+ * name 
  * id - sequence id
  * label - sequence label
 
@@ -117,8 +123,11 @@ Canvas
  * label - canvas label
 
 Annotation
+ * uri
+ * id_path - annotation id
 
- * id - annotation id
+Image 
+ * location_path
 
 Metadata
 
@@ -143,14 +152,14 @@ The metadata section contains xpath values that allow values to be extracted fro
 ```
 [manifest]
 # Where the resources live on the web
-base_metadata_uri:		http://www.example.org/path/to/object/ 
-
+uri:					http://www.example.org/path/to/object/
+id: 					manifest
+ 
 # Where the resources live on disk
 base_metadata_dir: 		/home/dmt/Documents/IIIF_Ingest/METS/ 
 
 # Default Image API information
 base_image_uri: 		http://www.example.org/path/to/image/api/ 
-
 iiif_image_info_version:2.0
 iiif_image_info_compliance:2
 
@@ -158,35 +167,39 @@ iiif_image_info_compliance:2
 debug: 					warn 
 
 label: 					Example Manifest
-id: 					manifest
 description:			This is a longer description of the manifest
 viewingDirection:		left-to-right
 
 [sequence]
+name:					SequenceName
 id:						http://www.example.org/path/to/object/sequence/normal
 label:					sequence label
+
 [canvas]
 id:						page
 label:					Page 
 
 [annotation]
-id:						http://www.example.org/path/to/object/annotation/
+uri:					scheme://host/prefix/%s/annotation/%s/info.json
+id_path:				/mets:mets/mets:structMap[@TYPE='PHYSICAL']//mets:div[@ID='%s']/@CONTENTIDS
+
 
 [metadata]
-contributor:	//mods:mods/mods:name[@mods:role='contributor']/mods:displayForm/text()
+contributor:	//mods:mods/mods:name[@mods:role='contributor']/mods:displayForm
 coverage:		concat(//mods:mods/mods:subject/mods:temporal,' ', //mods:mods/mods:subject/mods:geographic)
-creator:		//mods:mods/mods:name[@mods:role='creator']/mods:displayForm/text()
-date:			//mods:mods/mods:originInfo/mods:dateCreated/text()
-description:	//mods:mods/mods:note/text()
+creator:		//mods:mods/mods:name[@mods:role='creator']/mods:displayForm
+date:			//mods:mods/mods:originInfo/mods:dateCreated
+description:	//mods:mods/mods:note
 format:			concat(//mods:mods/mods:physicalDescription/mods:form,' ', //mods:mods/mods:physicalDescription/mods:extent, ' ',  //mods:mods/mods:physicalDescription/mods:extent/@unit, ' ', //mods:mods/mods:physicalDescription/mods:note)
-identifier:		//mods:mods/mods:identifier/text()
-language:		//mods:mods/mods:language/mods:languageTerm/text()
-publisher:		//mods:mods/mods:originInfo/mods:publisher/text()
-relation:		//mods:mods/mods:relatedItem/@displayLabel/text()
-rights:			//mods:mods/mods:accessCondition/text()
+identifier:		//mods:mods/mods:identifier
+language:		//mods:mods/mods:language/mods:languageTerm
+publisher:		//mods:mods/mods:originInfo/mods:publisher
+relation:		//mods:mods/mods:relatedItem/@displayLabel
+rights:			//mods:mods/mods:accessCondition
 source:
-subject:		//mods:mods/mods:subject/mods:topic/text()
-title:			//mods:mods/mods:titleInfo/mods:title/text()
-type:			//mods:mods/mods:typeOfResource/text()
+subject:		//mods:mods/mods:subject/mods:topic
+title:			//mods:mods/mods:titleInfo/mods:title
+type:			//mods:mods/mods:typeOfResource
+
 
 ```
