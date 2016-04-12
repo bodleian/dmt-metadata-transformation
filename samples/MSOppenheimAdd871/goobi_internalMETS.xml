@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/standards/premis/ http://www.loc.gov/standards/premis/v2/premis-v2-0.xsd http://www.loc.gov/standards/mix/ http://www.loc.gov/standards/mix/mix.xsd" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <mets:metsHdr CREATEDATE="2016-04-05T14:33:00">
+      <mets:agent OTHERTYPE="SOFTWARE" ROLE="CREATOR" TYPE="OTHER">
+         <mets:name>Goobi - ugh-1.10-ugh-2.0.0-10-g8f2555a - 11−August−2014</mets:name>
+         <mets:note>Goobi</mets:note>
+      </mets:agent>
+   </mets:metsHdr>
+   <mets:dmdSec ID="DMDLOG_0000">
+      <mets:mdWrap MDTYPE="MODS">
+         <mets:xmlData>
+            <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+               <mods:extension>
+                  <goobi:goobi xmlns:goobi="http://meta.goobi.org/v1.5.1/">
+                     <goobi:metadata name="CatalogIDDigital">1452598088645</goobi:metadata>
+                     <goobi:metadata name="CatalogIDSource">Neubauer 2563</goobi:metadata>
+                     <goobi:metadata name="DateRecordedEnd">1800</goobi:metadata>
+                     <goobi:metadata name="DateRecordedStart">1701</goobi:metadata>
+                     <goobi:metadata name="DocLanguage">Judaeo-Arabic</goobi:metadata>
+                     <goobi:metadata name="PlaceOfPublication">[North Africa?]</goobi:metadata>
+                     <goobi:metadata name="shelfmarksource">MS. Oppenheim Add. 8° 71</goobi:metadata>
+                     <goobi:metadata name="singleDigCollection">PolonskyHebrew</goobi:metadata>
+                     <goobi:metadata name="TitleDocMain">Miscellany (Poems on religious subjects)</goobi:metadata>
+                  </goobi:goobi>
+               </mods:extension>
+            </mods:mods>
+         </mets:xmlData>
+      </mets:mdWrap>
+   </mets:dmdSec>
+   <mets:dmdSec ID="DMDPHYS_0000">
+      <mets:mdWrap MDTYPE="MODS">
+         <mets:xmlData>
+            <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+               <mods:extension>
+                  <goobi:goobi xmlns:goobi="http://meta.goobi.org/v1.5.1/">
+                     <goobi:metadata name="pathimagefiles">file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif</goobi:metadata>
+                  </goobi:goobi>
+               </mods:extension>
+            </mods:mods>
+         </mets:xmlData>
+      </mets:mdWrap>
+   </mets:dmdSec>
+   <mets:fileSec>
+      <mets:fileGrp USE="LOCAL">
+         <mets:file ID="FILE_0001" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0001-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0002" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0002-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0003" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0003-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0004" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0004-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0005" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0005-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0006" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0006-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0007" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0007-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0008" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0008-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0009" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0009-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0010" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0010-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0011" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0011-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0012" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0012-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0013" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0013-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0014" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0014-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0015" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0015-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0016" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0016-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0017" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0017-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0018" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0018-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0019" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0019-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0020" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0020-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0021" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0021-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0022" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0022-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0023" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0023-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0024" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0024-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0025" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0025-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0026" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0026-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0027" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0027-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0028" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0028-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0029" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0029-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0030" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0030-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0031" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0031-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0032" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0032-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0033" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0033-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0034" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0034-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0035" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0035-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0036" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0036-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0037" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0037-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0038" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0038-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0039" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0039-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0040" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0040-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0041" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0041-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0042" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0042-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0043" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0043-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0044" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0044-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0045" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0045-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+         <mets:file ID="FILE_0046" MIMETYPE="image/tiff">
+            <mets:FLocat LOCTYPE="URL" xlink:href="file:///opt/digiverso/goobi/metadata/981/images/MSOppenheimAdd871_1452598088645_tif/oulis2015-bxx-0046-0.tif" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+         </mets:file>
+      </mets:fileGrp>
+   </mets:fileSec>
+   <mets:structMap TYPE="LOGICAL">
+      <mets:div DMDID="DMDLOG_0000" ID="LOG_0000" TYPE="Manuscript"/>
+   </mets:structMap>
+   <mets:structMap TYPE="PHYSICAL">
+      <mets:div DMDID="DMDPHYS_0000" ID="PHYS_0000" TYPE="BoundBook">
+         <mets:div ID="PHYS_0001" ORDER="1" ORDERLABEL="Upper cover" TYPE="page">
+            <mets:fptr FILEID="FILE_0001"/>
+         </mets:div>
+         <mets:div ID="PHYS_0002" ORDER="2" ORDERLABEL="Inside upper cover" TYPE="page">
+            <mets:fptr FILEID="FILE_0002"/>
+         </mets:div>
+         <mets:div ID="PHYS_0003" ORDER="3" ORDERLABEL="1st upper flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0003"/>
+         </mets:div>
+         <mets:div ID="PHYS_0004" ORDER="4" ORDERLABEL="1st upper flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0004"/>
+         </mets:div>
+         <mets:div ID="PHYS_0005" ORDER="5" ORDERLABEL="2nd upper flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0005"/>
+         </mets:div>
+         <mets:div ID="PHYS_0006" ORDER="6" ORDERLABEL="2nd upper flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0006"/>
+         </mets:div>
+         <mets:div ID="PHYS_0007" ORDER="7" ORDERLABEL="3rd upper flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0007"/>
+         </mets:div>
+         <mets:div ID="PHYS_0008" ORDER="8" ORDERLABEL="3rd upper flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0008"/>
+         </mets:div>
+         <mets:div ID="PHYS_0009" ORDER="9" ORDERLABEL="4th upper flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0009"/>
+         </mets:div>
+         <mets:div ID="PHYS_0010" ORDER="10" ORDERLABEL="4th upper flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0010"/>
+         </mets:div>
+         <mets:div ID="PHYS_0011" ORDER="11" ORDERLABEL="1r" TYPE="page">
+            <mets:fptr FILEID="FILE_0011"/>
+         </mets:div>
+         <mets:div ID="PHYS_0012" ORDER="12" ORDERLABEL="1v" TYPE="page">
+            <mets:fptr FILEID="FILE_0012"/>
+         </mets:div>
+         <mets:div ID="PHYS_0013" ORDER="13" ORDERLABEL="2r" TYPE="page">
+            <mets:fptr FILEID="FILE_0013"/>
+         </mets:div>
+         <mets:div ID="PHYS_0014" ORDER="14" ORDERLABEL="2v" TYPE="page">
+            <mets:fptr FILEID="FILE_0014"/>
+         </mets:div>
+         <mets:div ID="PHYS_0015" ORDER="15" ORDERLABEL="4r" TYPE="page">
+            <mets:fptr FILEID="FILE_0015"/>
+         </mets:div>
+         <mets:div ID="PHYS_0016" ORDER="16" ORDERLABEL="4v" TYPE="page">
+            <mets:fptr FILEID="FILE_0016"/>
+         </mets:div>
+         <mets:div ID="PHYS_0017" ORDER="17" ORDERLABEL="3r" TYPE="page">
+            <mets:fptr FILEID="FILE_0017"/>
+         </mets:div>
+         <mets:div ID="PHYS_0018" ORDER="18" ORDERLABEL="3v" TYPE="page">
+            <mets:fptr FILEID="FILE_0018"/>
+         </mets:div>
+         <mets:div ID="PHYS_0019" ORDER="19" ORDERLABEL="5r" TYPE="page">
+            <mets:fptr FILEID="FILE_0019"/>
+         </mets:div>
+         <mets:div ID="PHYS_0020" ORDER="20" ORDERLABEL="5v" TYPE="page">
+            <mets:fptr FILEID="FILE_0020"/>
+         </mets:div>
+         <mets:div ID="PHYS_0021" ORDER="21" ORDERLABEL="6r" TYPE="page">
+            <mets:fptr FILEID="FILE_0021"/>
+         </mets:div>
+         <mets:div ID="PHYS_0022" ORDER="22" ORDERLABEL="6v" TYPE="page">
+            <mets:fptr FILEID="FILE_0022"/>
+         </mets:div>
+         <mets:div ID="PHYS_0023" ORDER="23" ORDERLABEL="7r" TYPE="page">
+            <mets:fptr FILEID="FILE_0023"/>
+         </mets:div>
+         <mets:div ID="PHYS_0024" ORDER="24" ORDERLABEL="7v" TYPE="page">
+            <mets:fptr FILEID="FILE_0024"/>
+         </mets:div>
+         <mets:div ID="PHYS_0025" ORDER="25" ORDERLABEL="8r" TYPE="page">
+            <mets:fptr FILEID="FILE_0025"/>
+         </mets:div>
+         <mets:div ID="PHYS_0026" ORDER="26" ORDERLABEL="8v" TYPE="page">
+            <mets:fptr FILEID="FILE_0026"/>
+         </mets:div>
+         <mets:div ID="PHYS_0027" ORDER="27" ORDERLABEL="9r" TYPE="page">
+            <mets:fptr FILEID="FILE_0027"/>
+         </mets:div>
+         <mets:div ID="PHYS_0028" ORDER="28" ORDERLABEL="9v" TYPE="page">
+            <mets:fptr FILEID="FILE_0028"/>
+         </mets:div>
+         <mets:div ID="PHYS_0029" ORDER="29" ORDERLABEL="10r" TYPE="page">
+            <mets:fptr FILEID="FILE_0029"/>
+         </mets:div>
+         <mets:div ID="PHYS_0030" ORDER="30" ORDERLABEL="10v" TYPE="page">
+            <mets:fptr FILEID="FILE_0030"/>
+         </mets:div>
+         <mets:div ID="PHYS_0031" ORDER="31" ORDERLABEL="11r" TYPE="page">
+            <mets:fptr FILEID="FILE_0031"/>
+         </mets:div>
+         <mets:div ID="PHYS_0032" ORDER="32" ORDERLABEL="11v" TYPE="page">
+            <mets:fptr FILEID="FILE_0032"/>
+         </mets:div>
+         <mets:div ID="PHYS_0033" ORDER="33" ORDERLABEL="12r" TYPE="page">
+            <mets:fptr FILEID="FILE_0033"/>
+         </mets:div>
+         <mets:div ID="PHYS_0034" ORDER="34" ORDERLABEL="12v" TYPE="page">
+            <mets:fptr FILEID="FILE_0034"/>
+         </mets:div>
+         <mets:div ID="PHYS_0035" ORDER="35" ORDERLABEL="1st lower flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0035"/>
+         </mets:div>
+         <mets:div ID="PHYS_0036" ORDER="36" ORDERLABEL="1st lower flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0036"/>
+         </mets:div>
+         <mets:div ID="PHYS_0037" ORDER="37" ORDERLABEL="2nd lower flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0037"/>
+         </mets:div>
+         <mets:div ID="PHYS_0038" ORDER="38" ORDERLABEL="2nd lower flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0038"/>
+         </mets:div>
+         <mets:div ID="PHYS_0039" ORDER="39" ORDERLABEL="3rd lower flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0039"/>
+         </mets:div>
+         <mets:div ID="PHYS_0040" ORDER="40" ORDERLABEL="3rd lower flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0040"/>
+         </mets:div>
+         <mets:div ID="PHYS_0041" ORDER="41" ORDERLABEL="4th lower flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0041"/>
+         </mets:div>
+         <mets:div ID="PHYS_0042" ORDER="42" ORDERLABEL="4th lower flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0042"/>
+         </mets:div>
+         <mets:div ID="PHYS_0043" ORDER="43" ORDERLABEL="5th lower flyleaf recto" TYPE="page">
+            <mets:fptr FILEID="FILE_0043"/>
+         </mets:div>
+         <mets:div ID="PHYS_0044" ORDER="44" ORDERLABEL="5th lower flyleaf verso" TYPE="page">
+            <mets:fptr FILEID="FILE_0044"/>
+         </mets:div>
+         <mets:div ID="PHYS_0045" ORDER="45" ORDERLABEL="Inside lower cover" TYPE="page">
+            <mets:fptr FILEID="FILE_0045"/>
+         </mets:div>
+         <mets:div ID="PHYS_0046" ORDER="46" ORDERLABEL="Lower cover" TYPE="page">
+            <mets:fptr FILEID="FILE_0046"/>
+         </mets:div>
+      </mets:div>
+   </mets:structMap>
+   <mets:structLink>
+      <mets:smLink xlink:to="PHYS_0001" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0002" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0003" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0004" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0005" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0006" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0007" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0008" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0009" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0010" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0011" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0012" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0013" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0014" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0015" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0016" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0017" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0018" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0019" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0020" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0021" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0022" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0023" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0024" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0025" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0026" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0027" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0028" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0029" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0030" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0031" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0032" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0033" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0034" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0035" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0036" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0037" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0038" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0039" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0040" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0041" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0042" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0043" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0044" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0045" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <mets:smLink xlink:to="PHYS_0046" xlink:from="LOG_0000" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+   </mets:structLink>
+</mets:mets>
