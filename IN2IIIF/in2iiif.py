@@ -60,8 +60,9 @@ class In2iiif():
              fac.set_base_image_uri(arg.manifest_base_image_uri) # Default Image API information
              fac.set_iiif_image_info(arg.manifest_iiif_image_info_version,arg.manifest_iiif_image_info_compliance) # Version, ComplianceLevel
              fac.set_debug(arg.debug)         
-         except:
-             print("You need to ensure the following parameters are set in the configuration file: base_metadata_dir, base_image_uri, iiif_image_info_version, iiif_image_info_compliance, debug.")
+         except Exception as inst:
+             print("Problem encountered setting factory properties: " , inst)
+             print("You need to ensure the following parameters are set correctly in the configuration file: base_metadata_dir, base_image_uri, iiif_image_info_version, iiif_image_info_compliance, debug.")
     
     def setManifestProperties(self, manifest):
          """Sets the ManifestFactory Manifest's properties."""
@@ -96,8 +97,11 @@ class In2iiif():
          arg = GlobalConfig() # instance of GlobalConfig        
          config = ConfigParser.ConfigParser() # instance of config file parser
          
+         
+         
          try:
              config.read(arg.config) # read configuration file defined in command line arguments
+             
          
              # pass values to instance of GlobalConfig as arguments, that will add them to dictionary
              GlobalConfig(   

@@ -101,8 +101,9 @@ class Mets2iiif(In2iiif):
          try:
              file = open(arg.input, 'r')   # read mets file
          except IOError as e:
-             print("Problem encountered with opening the METS file", e)
-         
+        
+             print("Problem encountered with opening the METS file", e, arg.input)
+             sys.exit(1);
          try:        
              doc = etree.parse(file)
          except Exception as e:
@@ -344,7 +345,6 @@ class Mets2iiif(In2iiif):
 
 
      
-
 if __name__ == "__main__": main()
 
 
