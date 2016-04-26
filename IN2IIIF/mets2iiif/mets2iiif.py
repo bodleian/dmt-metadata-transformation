@@ -237,8 +237,8 @@ class Mets2iiif(In2iiif):
             
             # annotation
             annotation = self._annotation(canvas, canvas_id)
-            
-            self._image(canvas, annotation, counter)
+
+            self._image(canvas, annotation, counter, canvas_id)
             
   
      def _annotation(self, canvas, canvas_id):
@@ -273,56 +273,69 @@ class Mets2iiif(In2iiif):
          return annotation        
      
      
-     def _image(self, canvas, annotation, counter):    
+     def _image(self, canvas, annotation, counter, canvas_id):    
          """Define image for annotation."""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-            
-         image_location = self._getImageLocation()
+             
+         image_location = self._getImageLocation(canvas_id)
          
          # image - assumption - one image per canvas
          image = annotation.image("p%s" % counter, iiif=True)
-        
-         
+          
+          
          self.setImageProperties(image, image_location)
         
          self.setCanvasProperties(canvas, image)
         
                  
-     def _getImageLocation(self):
+     def _getImageLocation(self, canvas_id):
          """Determine image location."""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
          
          # determine whether to get images from local directory or via mets 
          # use arg image_src directory mets_file and image_dir 
+         
+         if (arg.image_src == 'directory') and (os.path.isdir(arg.image_dir) == False):
+             # image location is specified by file path in image_dir command line parameter
+             image_location = arg.image_dir
+             return image_location
+         
+         # open mets file   
+         try:
+             file = open(arg.input, 'r') # open mets file for reading
+             doc = etree.parse(file) # read file into etree for xpath queries
+         except:
+             print('Unable to open mets file ',  arg.input)
+             sys.exit(0)   
+             
+         # determine file id  
+         xpath = "//mets:structMap[@TYPE='PHYSICAL']/mets:div/mets:div[@ID='%s']/mets:fptr[position()=1]/@FILEID" % canvas_id       
+         file_id = doc.xpath(xpath, namespaces={'mets': 'http://www.loc.gov/METS/'})[0]      
+             
+         
+        # image information is from images in directory specified by image_dir
+        # determine file name from mets file using file_id parameter
+         try:
+            # determine image location
+            xpath = arg.image_location_path % file_id
             
-         if arg.image_src == 'directory':
-                # image information is from images in directory specified by image_dir
-               image_location = arg.image_dir
-               return image_location
-         else:
-                # image information derived from mets file           
-                # get item id to retrieve file name
-                
-                try:
-                    file = open(arg.input, 'r') # open mets file for reading
-                    doc = etree.parse(file) # read file into etree for xpath queries
-                except:
-                    print('Unable to open mets file',  arg.input)
-                    sys.exit(0)
-                
-                try:    
-                    item_id = item.xpath('mets:fptr[1]/@FILEID', namespaces={'mets': 'http://www.loc.gov/METS/'})
-                    #xpathImageLocation = arg.image_location_path + "mets:file[@ID='" + item_id[0] +"']/mets:FLocat/@xlink:href"
-                    xpathImageLocation = arg.image_location_path % item_id[0]
-                    
-                    image_location = doc.xpath(xpathImageLocation, namespaces={'mets': 'http://www.loc.gov/METS/', 'xlink':'http://www.w3.org/1999/xlink'})
-                    image_location = image_location[0]
-                    return image_location    
-                except:
-                    print('Unable to determine image location from mets file')
-                    sys.exit(0)
+            image_location = doc.xpath(xpath, namespaces={'xlink':'http://www.w3.org/1999/xlink', 'mets': 'http://www.loc.gov/METS/'})[0]
+         except:
+            print('Problem with determination of image location from METS file - check that the image location_path parameter is correct in your configuration file.')
+            sys.exit(0)
+       
+         if image_location == '':
+            print('Unable to determine image file location from METS file')
+            sys.exit(0)
+               
+         # if image location is relative then get mets file location from input parameter and append
+         if os.path.isabs(image_location) is False: # 
+            image_location = os.path.join(arg.image_dir, os.path.basename(image_location))
+
+         return image_location
+         
 
 
      def getMetsFileStructMap(self):
@@ -338,7 +351,7 @@ class Mets2iiif(In2iiif):
              print("Error when opening or parsing METS file:", e)
              sys.exit(0)
              
-         xpath = "//mets:structMap/mets:div/mets:div"
+         xpath = "//mets:structMap[@TYPE='PHYSICAL']/mets:div/mets:div"
          xml = doc.xpath(xpath, namespaces={'mets': 'http://www.loc.gov/METS/'})
          
          return xml

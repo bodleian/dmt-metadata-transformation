@@ -80,11 +80,13 @@ class In2iiif():
     def setImageProperties(self, img, imagefile):
          """Sets the ManifestFactory Image properties."""   
 
+         
          if os.path.isfile(imagefile) == True:
+             # if path provided is to a file then set height width properties using file specified
              img.set_hw_from_file(imagefile) 
          else:
              print('The image file does not exist: ' + imagefile )
-             sys.exit(0)    
+          #   sys.exit(0)    
              
          
          
@@ -142,14 +144,14 @@ class In2iiif():
          #POSITIONAL/REQUIRED ARGUMENTS
          parser.add_argument("--config", help="configuration file", required="True")
          parser.add_argument("--input",  help="input source file", required="True")  
-         parser.add_argument("--output", help="output destination file")
+         parser.add_argument("--output", help="output destination file" , required="True")
          parser.add_argument("--image_src",  help="image source: directory | mets_file", required="True")
 
          #OPTIONAL ARGUMENTS
          
          # eg /home/dmt/Documents/IIIF_Ingest/images/
          parser.add_argument("--image_dir", help="location of image directory (if source folder used for images")
-         parser.add_argument("--compact", help="Should json be compact form or human-readable: Compact | Normal")
+         parser.add_argument("--compact", help="Should json be compact form or human-readable: Compact | Normal", required="True")
 
          # convert argument strings to objects and assign them as attributes
          # https://docs.python.org/2/library/argparse.html#the-parse-args-method
@@ -158,6 +160,7 @@ class In2iiif():
          except Exception as e:
              print('Problem encountered with reading command line arguments: ', e)
              sys.exit(0)
+          
         
          # Add command line arguments to the global dictionary using GlobalConfig
          try:
