@@ -320,7 +320,6 @@ class Mets2iiif(In2iiif):
          try:
             # determine image location
             xpath = arg.image_location_path % file_id
-            
             image_location = doc.xpath(xpath, namespaces={'xlink':'http://www.w3.org/1999/xlink', 'mets': 'http://www.loc.gov/METS/'})[0]
          except:
             print('Problem with determination of image location from METS file - check that the image location_path parameter is correct in your configuration file.')
