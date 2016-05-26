@@ -49,14 +49,28 @@ usage: mets2iiif.py [-h] --config CONFIG --output OUTPUT --input INPUT --image_s
 Example
 
 ```bash
-python mets2iiif.py 
---config mets.cfg 
---input /home/dmt/Documents/IIIF_Ingest/METS/input/12.xml 
---image_src directory 
---image_dir /home/dmt/Documents/IIIF_Ingest/images/book.jpg 
---compact False
---output /home/dmt/Documents/manifest.json
+python mets2iiif.py --config example/mets.cfg --input example/METS/12.xml --image_src directory --image_dir example/book.jpg --compact False --output example/manifest.json
+
 ```
+
+Tei2iiif
+--------
+Tei2iiif.py is a file that transforms TEI to IIIF presentation manifest. Tei2iiif.py imports in2iiif.py
+
+```bash
+usage: tei2iiif.py [-h] --config CONFIG --input INPUT --output OUTPUT --image_src IMAGE_SRC [--image_dir IMAGE_DIR] --compact COMPACT
+```
+
+Example
+
+```bash
+python tei2iiif.py --config example/tei.cfg --input example/tei.xml --image_src directory --image_dir example/images/ --compact False --output example/manifest.json
+
+```
+
+
+
+
 
 Configuration options
 =====================

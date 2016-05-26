@@ -247,8 +247,9 @@ class Tei2iiif(In2iiif):
                   
          annotation = canvas.annotation()
         
-         if arg.annotation_id != "":
-             annotation.id = arg.annotation_id + canvas_id
+     #    if arg.annotation_id != "":
+     #        annotation.id = arg.annotation_id + canvas_id
+         annotation.id = canvas_id
          return annotation        
      
      

@@ -1,0 +1,106 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json", 
+  "@id": "http://www.example.org/path/to/object/manifest/manifest.json", 
+  "@type": "sc:Manifest", 
+  "label": "Example Manifest", 
+  "metadata": [
+    {
+      "label": "publisher", 
+      "value": ""
+    }, 
+    {
+      "label": "rights", 
+      "value": ""
+    }, 
+    {
+      "label": "description", 
+      "value": "(EEBO-TCP ; phase 1, no. A12074);Transcribed from: (Early English Books Online ; image set 17754);Images scanned from microfilm: (Early English books, 1475-1640 ; 723:24)"
+    }, 
+    {
+      "label": "language", 
+      "value": ""
+    }, 
+    {
+      "label": "format", 
+      "value": ""
+    }, 
+    {
+      "label": "creator", 
+      "value": ""
+    }, 
+    {
+      "label": "date", 
+      "value": ""
+    }, 
+    {
+      "label": "relation", 
+      "value": ""
+    }, 
+    {
+      "label": "source", 
+      "value": ""
+    }, 
+    {
+      "label": "coverage", 
+      "value": ""
+    }, 
+    {
+      "label": "contributor", 
+      "value": ""
+    }, 
+    {
+      "label": "title", 
+      "value": ""
+    }, 
+    {
+      "label": "identifier", 
+      "value": ""
+    }, 
+    {
+      "label": "type", 
+      "value": ""
+    }, 
+    {
+      "label": "subject", 
+      "value": ""
+    }
+  ], 
+  "description": "This is a longer description of the manifest", 
+  "viewingDirection": "left-to-right", 
+  "sequences": [
+    {
+      "@id": "http://digital.bodleian.ox.ac.uk/%s/sequence/%s", 
+      "@type": "sc:Sequence", 
+      "label": "sequence label", 
+      "canvases": [
+        {
+          "@id": "http://www.example.org/path/to/object/manifest/canvas/page-1.json", 
+          "@type": "sc:Canvas", 
+          "label": "Page 1", 
+          "height": 1574, 
+          "width": 2351, 
+          "images": [
+            {
+              "@id": "page-1", 
+              "@type": "oa:Annotation", 
+              "motivation": "sc:painting", 
+              "resource": {
+                "@id": "http://digital.bodleian.ox.ac.uk/images/p1/full/full/0/default.jpg", 
+                "@type": "dctypes:Image", 
+                "format": "image/jpeg", 
+                "height": 1574, 
+                "width": 2351, 
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json", 
+                  "@id": "http://digital.bodleian.ox.ac.uk/images/p1", 
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                }
+              }, 
+              "on": "http://www.example.org/path/to/object/manifest/canvas/page-1.json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
