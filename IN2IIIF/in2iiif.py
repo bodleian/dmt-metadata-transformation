@@ -79,14 +79,11 @@ class In2iiif():
     
     def setImageProperties(self, img, imagefile):
          """Sets the ManifestFactory Image properties."""   
-
-         
-         if os.path.isfile(imagefile) == True:
-             # if path provided is to a file then set height width properties using file specified
+         if os.path.isfile(imagefile) == True: # if path provided is to a file then set height width properties using file specified
              img.set_hw_from_file(imagefile) 
          else:
              print('The image file does not exist: ' + imagefile )
-          #   sys.exit(0)    
+             sys.exit(0)    
              
          
          
@@ -122,7 +119,8 @@ class In2iiif():
                     sequence_label = config.get('sequence','label'),
                     
                     canvas_id = config.get('canvas','id'),
-                    canvas_label = config.get('canvas','label'),
+                    canvas_label_prefix = config.get('canvas','label_prefix'),
+                    canvas_label_regex = config.get('canvas','label_regex'),
                     annotation_uri = config.get('annotation','uri'),
                     annotation_id_path = config.get('annotation', 'id_path'),
                     image_location_path = config.get('image', 'location_path'),
@@ -145,12 +143,12 @@ class In2iiif():
          parser.add_argument("--config", help="configuration file", required="True")
          parser.add_argument("--input",  help="input source file", required="True")  
          parser.add_argument("--output", help="output destination file" , required="True")
-         parser.add_argument("--image_src",  help="image source: directory | mets_file", required="True")
+         parser.add_argument("--image_src",  help="image source: image_file | image_directory | mets_file", required="True")
 
          #OPTIONAL ARGUMENTS
          
          # eg /home/dmt/Documents/IIIF_Ingest/images/
-         parser.add_argument("--image_dir", help="location of image directory (if source folder used for images")
+         parser.add_argument("--image_location", help="file path of single image file or image directory, if image_src = image_directory or image_file")
          parser.add_argument("--compact", help="Should json be compact form or human-readable: Compact | Normal", required="True")
 
          # convert argument strings to objects and assign them as attributes
@@ -168,7 +166,7 @@ class In2iiif():
              GlobalConfig(input = arguments.input)
              GlobalConfig(output = arguments.output)
              GlobalConfig(image_src = arguments.image_src )
-             GlobalConfig(image_dir = arguments.image_dir )
+             GlobalConfig(image_location = arguments.image_location )
              GlobalConfig(compact = arguments.compact)
  
          except Exception as e:
