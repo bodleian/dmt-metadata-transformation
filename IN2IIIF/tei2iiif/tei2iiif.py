@@ -177,18 +177,13 @@ class Tei2iiif(In2iiif):
         # assumption is that there is one sequence per manifest
         
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-        
          sequence = manifest.sequence()
-         
-         # if sequence_id defined in global variables use this
-         if arg.sequence_id != "":
-             sequence.id = arg.sequence_id
-         # if seqeunce label defined in global variables use this    
-         if arg.sequence_label != "":
+         if arg.sequence_id != "": # if sequence_id defined in global variables use this
+             sequence.id = arg.sequence_id % (arg.manifest_id, arg.sequence_name)
+         if arg.sequence_label != "":  # if sequence label defined in global variables use this    
             sequence.label = arg.sequence_label     
          
          return sequence   
-
 
      def outputManifest(self, manifest):
          """
@@ -219,26 +214,59 @@ class Tei2iiif(In2iiif):
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
          
-         image_location = self._getImageLocation()
-         
-         counter = 0 # counter for canvas label and id
-         
-         # iterate through files in directory provided
-         
-         for filename in os.listdir(image_location):
+         if (arg.image_src == 'directory') and (os.path.isdir(arg.image_location) == True): # canvases and images defined using files in image directory
+             image_directory_location = arg.image_location # image location is specified by directory path in image_location command line parameter
+             counter = 0
+             
+             # iterate through image files in the directory
+             for file in sorted(os.listdir(image_directory_location)):
+                     
+                 counter += 1
+                 image_location = image_directory_location + os.sep + file # determine file path for image  
+                 canvas_id = arg.canvas_id +"-" + str(counter)  # use canvas id prefix defined in config
+                 canvas_label = self._canvas_label(counter, file)  # use canvas label prefix defined in config
+                 canvas = sequence.canvas(ident = canvas_id, label = canvas_label)   # canvas
+                 annotation = canvas.annotation()
+                 annotation.id = arg.annotation_uri % (arg.manifest_id, canvas_id) # set id property for annotation
+                 self._image(canvas, annotation, counter,  image_location)
+             
+         elif (arg.image_src == 'file') and (os.path.isdir(arg.image_location) == False): # canvas and image defined using single file specified
+             image_location = arg.image_location # image location is specified by file path in image_location command line parameter
+             canvas_id = arg.canvas_id +"-1"  # use canvas id prefix defined in config
+             canvas_label = self._canvas_label(1, ntpath.basename(image_location)) # use canvas label prefix defined in config
+             canvas = sequence.canvas(ident = canvas_id, label = canvas_label)   # canvas
+             annotation = canvas.annotation()
+             annotation.id = arg.annotation_uri % (arg.manifest_id, canvas_id) # set id property for annotation
+             self._image(canvas, annotation, 1,  image_location)
+                
+         else:
+             
+             pass
+    
 
-             counter += 1
-             canvas_id = arg.canvas_id +"-" + str(counter) # or if not present, use canvas id prefix defined in config            
-             canvas_label = arg.canvas_label+" " + str(counter) # or if not present, use canvas label prefix defined in config
+  
+     def _canvas_label(self, counter, filename):
         
-             # canvas
-             canvas = sequence.canvas(ident = canvas_id, label = canvas_label)
-            
-             # annotation
-             annotation = self._annotation(canvas, canvas_id)
-            
-             self._image(canvas, annotation, counter, image_location + filename)
-            
+         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
+         
+         if ((arg.canvas_label_regex != '') and (filename != '')) :
+             # use regex with filename to determine canvas label
+             regex = re.compile( arg.canvas_label_regex )
+             matchObj = re.match( regex  , filename)
+             canvas_label = matchObj.group()   
+             if canvas_label == '':
+                 print('Problem with canvas label regular expression in config file - creating canvas label with label_prefix', arg.canvas_label_regex,  filename)
+                 canvas_label = arg.canvas_label_prefix + " " + str(counter)  
+         else:
+             canvas_label = arg.canvas_label_prefix + " " + str(counter)
+         
+         # canvas requires label - error if label not 
+         if canvas_label == '':
+             print('Canvas requires a label',  arg.input)
+             sys.exit(0)
+
+         return canvas_label
+
   
      def _annotation(self, canvas, canvas_id):
          """Define annotation for canvas."""
@@ -248,46 +276,24 @@ class Tei2iiif(In2iiif):
          annotation = canvas.annotation()
         
      #    if arg.annotation_id != "":
-     #        annotation.id = arg.annotation_id + canvas_id
+     #    annotation.id = arg.annotation_id + canvas_id
          annotation.id = canvas_id
          return annotation        
      
      
-     def _image(self, canvas, annotation, counter, filename):    
+     def _image(self, canvas, annotation, counter, image_location):    
          """Define image for annotation."""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-            
-         
          
          # image - assumption - one image per canvas
          image = annotation.image("p%s" % counter, iiif=True)
         
-         self.setImageProperties(image, filename)
+         self.setImageProperties(image, image_location)
         
          self.setCanvasProperties(canvas, image)
         
                  
-     def _getImageLocation(self):
-         """Determine image location."""
-         
-         arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-         
-         # determine whether to get images from local directory or via mets 
-         # use arg image_src directory mets_file and image_dir 
-            
-         if arg.image_src == 'directory':
-                # image information is from images in directory specified by image_dir
-               image_location = arg.image_dir
-               return image_location
-         else:
-               pass
-                
-
-
-     
-
-
      
 
 if __name__ == "__main__": main()
