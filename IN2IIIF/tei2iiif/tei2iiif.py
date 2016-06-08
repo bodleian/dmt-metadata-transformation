@@ -239,12 +239,11 @@ class Tei2iiif(In2iiif):
              annotation.id = arg.annotation_uri % (arg.manifest_id, canvas_id) # set id property for annotation
              self._image(canvas, annotation, 1,  image_location)
                 
-         else:
-             
-             pass
-    
+         else:             
+             print('Image source not defined correctly in command line parameters - canvas cannot be created. ',  arg.input)
+             sys.exit(0)
 
-  
+
      def _canvas_label(self, counter, filename):
         
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
