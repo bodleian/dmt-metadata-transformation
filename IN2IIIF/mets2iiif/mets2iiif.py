@@ -201,7 +201,7 @@ class Mets2iiif(In2iiif):
                  canvas = sequence.canvas(ident = canvas_id, label = canvas_label)   # canvas
                  annotation = canvas.annotation()
                  annotation.id = arg.annotation_uri % (arg.manifest_id, canvas_id) # set id property for annotation
-                 self._image(canvas, annotation, counter, canvas_id, image_location)
+                 self._image(canvas, annotation, counter,  image_location)
              
          elif (arg.image_src == 'file') and (os.path.isdir(arg.image_location) == False): # canvas and image defined using single file specified
              image_location = arg.image_location # image location is specified by file path in image_location command line parameter
@@ -210,7 +210,7 @@ class Mets2iiif(In2iiif):
              canvas = sequence.canvas(ident = canvas_id, label = canvas_label)   # canvas
              annotation = canvas.annotation()
              annotation.id = arg.annotation_uri % (arg.manifest_id, canvas_id) # set id property for annotation
-             self._image(canvas, annotation, 1, canvas_id, image_location)
+             self._image(canvas, annotation, 1, image_location)
                 
          else:
              structMap = self._getMetsFileStructMap()  # canvases and images defined in mets file - read METS file structMap
@@ -232,7 +232,7 @@ class Mets2iiif(In2iiif):
                 canvas = sequence.canvas(ident = canvas_id, label = canvas_label)   # canvas
                 annotation = self._annotation(canvas, canvas_id)  # annotation
                 image_location = self._getImageLocation(canvas_id)
-                self._image(canvas, annotation, counter, canvas_id, image_location)
+                self._image(canvas, annotation, counter,  image_location)
             
      def _canvas_label(self, counter, filename):
         
@@ -282,7 +282,7 @@ class Mets2iiif(In2iiif):
          return annotation        
      
      
-     def _image(self, canvas, annotation, counter, canvas_id, image_location):    
+     def _image(self, canvas, annotation, counter,  image_location):    
          """Define image for annotation."""
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables   
          
