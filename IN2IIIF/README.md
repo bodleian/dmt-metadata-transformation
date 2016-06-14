@@ -1,33 +1,57 @@
 Introduction
 ============
-IN2IIF is a python application that converts various formats to IIIF Manifest Presentation API v2.0.
+IN2IIIF is a python application that converts a number of data formats to a manifest file conforming to the IIIF Manifest Presentation API 2.0 specification (http://iiif.io/api/presentation/2.0/).
 
+IN2IIIF is intended to be used on the command line, and with workflow software such as Goobi (https://www.intranda.com/en/digiverso/goobi/workflow/). 
+
+IN2IIIF supports the conversion of two data formats:
+* METS (http://www.loc.gov/standards/mets/), and 
+* TEI P5 (http://www.tei-c.org/Guidelines/P5/)
 
 Dependencies
 ============
-
-ManifestFactory
----------------
-https://github.com/IIIF/presentation-api/tree/master/implementations/manifest-factory 
-
-IN2IIIF makes use of the ManifestFactory python library to generate the IIIF presentation manifest 
-
+The use of IN2IIIF has a number of dependencies relating to the use of third-party python packages and modules.
 Python 2.7
 ----------
-Use of ManifestFactory requires the use of python version 2.7
-
-ImageMagick or Python Image Library
------------------------------------
+IN2IIIF uses a python module (ManifestFactory) and this requires that Python version 2.7 is available.
+ManifestFactory
+---------------
+IN2IIIF makes use of the ManifestFactory python module to generate the IIIF presentation manifest, available at https://github.com/IIIF/presentation-api/tree/master/implementations/manifest-factory
+ImageMagick or Python Image Library (PIL)
+-----------------------------------------
 Use of ManifestFactory requires the use of ImageMagick or Python Image Library if image dimensions are to be determined programmatically.
 
+pillow
+https://pypi.python.org/pypi/Pillow
+Pillow is a python package that incorporates the Python Image Library.
 
-Setup
-=====
+lxml
+----
+http://lxml.de/
+lxml is a python library for XML and HTML processing 
 
+Pip
+---
+https://pypi.python.org/pypi/pip
+Pip is a tool for installation python packages.
+
+The python modules or packages, lxml, pillow and ManifestFactory, mentioned above can be installed using pip (see below).
+Git
+https://git-scm.com/
+Use git to download a copy of the IN2IIIF code.
+
+Installation
+============
+Download a copy of IN2IIF using git:
+git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git
+
+Go into the IN2IIIF directory and install the python dependencies using pip:
+
+```
 git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git 
 cd IN2IIIF
 pip install -r requirements.txt
-
+```
 
 
 Usage
