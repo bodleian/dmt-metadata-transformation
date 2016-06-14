@@ -22,6 +22,7 @@ ImageMagick or Python Image Library (PIL)
 Use of ManifestFactory requires the use of ImageMagick or Python Image Library if image dimensions are to be determined programmatically.
 
 pillow
+------
 https://pypi.python.org/pypi/Pillow
 Pillow is a python package that incorporates the Python Image Library.
 
