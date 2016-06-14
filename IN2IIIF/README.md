@@ -63,16 +63,15 @@ Conversion of METS files
 Use the mets2iiif.py file in the mets2iiif directory to convert METS files to IIIF.
 
 There are three options available when converting METS files to IIIF:
-Image location and label specified in the METS file
-Extract information on image location from a single image file
-Extract information on image location from a file directory containing the image files 
+* Image location and label specified in the METS file
+* Extract information on image location from a single image file
+* Extract information on image location from a file directory containing the image files 
 
 The command line parameters you use depends on the type of conversion you want to achieve.
 ```
 usage: mets2iiif.py [-h] --config CONFIG --input INPUT --output OUTPUT --image_src IMAGE_SRC [--image_location IMAGE_LOCATION]
  --compact COMPACT
 ```
-
 
 Image location and label specified in the METS file
 ---------------------------------------------------
@@ -81,7 +80,6 @@ Example
 ```
 python mets2iiif.py --config example/mets2.cfg --input ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/local_flocatMets.xml --image_src mets_file  --image_location ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/images/MSOppenheimAdd871_1452598088645_jpg/  --compact False --output example/manifest.json
 ```
-
 
 Image location and label specified with a single image file
 -----------------------------------------------------------
@@ -100,7 +98,7 @@ python mets2iiif.py --config example/mets2.cfg --input ~/apps/MetadataTransforma
 ```
 Conversion of TEI files
 -----------------------
-Use the tei2iiif.py file to convert TEI files to IIIF.
+Use the tei2iiif.py file in the tei2iiif directory to convert TEI files to IIIF.
 ```
 usage: tei2iiif.py [-h] --config CONFIG --input INPUT --output OUTPUT --image_src IMAGE_SRC [--image_location IMAGE_LOCATION] --compact COMPACT
 ```
