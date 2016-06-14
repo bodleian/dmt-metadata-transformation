@@ -112,9 +112,9 @@ configuration file - location of configuration file
 --input
 input source file - location of input file to be transformed
 --image_src
-image source - directory or mets_file
---image_dir
-location of image directory (if source folder used)
+image source - "directory", "file" or "mets_file"
+--image_location
+location of image directory (used if image_src is "directory" or "file")
 --compact
 should json be compact or human-readable
 --output
@@ -149,7 +149,6 @@ Manifest
  
  * debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
  
- 
  * label - human-readable label for manifest
  * description - description of manifest
  * viewingDirection - viewing direction of image
@@ -163,8 +162,8 @@ Sequence
 Canvas
 
  * id - canvas id
- * label - canvas label
-
+ * label_prefix - canvas label
+ * label_regex - regular expression to extract label from file name
 Annotation
  * uri
  * id_path - annotation id
