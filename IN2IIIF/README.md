@@ -32,41 +32,70 @@ pip install -r requirements.txt
 
 Usage
 =====
-The in2iiif.py file is not called directly, but must be imported by another python file that is concerned with a specific format transformation, e.g. METS.
 
-Mets2iiif
----------
-Mets2iiif.py is a file that transforms METS/MODS to IIIF presentation manifest. Mets2iiif.py imports in2iiif.py. 
+Conversion of METS files
+-------------------------
+Use the mets2iiif.py file in the mets2iiif directory to convert METS files to IIIF.
 
+There are three options available when converting METS files to IIIF:
+Image location and label specified in the METS file
+Extract information on image location from a single image file
+Extract information on image location from a file directory containing the image files 
 
-
-
-```bash
-usage: mets2iiif.py [-h] --config CONFIG --output OUTPUT --input INPUT --image_src IMAGE_SRC
-                    [--image_dir IMAGE_DIR] [--compact COMPACT]
+The command line parameters you use depends on the type of conversion you want to achieve.
+```
+usage: mets2iiif.py [-h] --config CONFIG --input INPUT --output OUTPUT --image_src IMAGE_SRC [--image_location IMAGE_LOCATION]
+ --compact COMPACT
 ```
 
+
+Image location and label specified in the METS file
+---------------------------------------------------
+The image location and label are defined in the structMap section of the METS file. The image location will be used to retrieve an image and determine its dimensions; information that will be added to the IIIF manifest file.
 Example
-
-```bash
-python mets2iiif.py --config example/mets.cfg --input example/METS/12.xml --image_src directory --image_dir example/book.jpg --compact False --output example/manifest.json
-
+```
+python mets2iiif.py --config example/mets2.cfg --input ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/local_flocatMets.xml --image_src mets_file  --image_location ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/images/MSOppenheimAdd871_1452598088645_jpg/  --compact False --output example/manifest.json
 ```
 
-Tei2iiif
---------
-Tei2iiif.py is a file that transforms TEI to IIIF presentation manifest. Tei2iiif.py imports in2iiif.py
 
-```bash
-usage: tei2iiif.py [-h] --config CONFIG --input INPUT --output OUTPUT --image_src IMAGE_SRC [--image_dir IMAGE_DIR] --compact COMPACT
-```
-
+Image location and label specified with a single image file
+-----------------------------------------------------------
+The image location is defined as a single file location in the command line parameters. The image label and image properties will be determined from the file, together with the use of an optional regular expression defined in the mets2iiif configuration file.
 Example
-
-```bash
-python tei2iiif.py --config example/tei.cfg --input example/tei.xml --image_src directory --image_dir example/images/ --compact False --output example/manifest.json
-
 ```
+python mets2iiif.py --config example/mets2.cfg --input ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/local_flocatMets.xml --image_src file  --image_location ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/images/MSOppenheimAdd871_1452598088645_jpg/oulis2015-bxx-0010-0.jpg  --compact False --output example/manifest.json
+```
+
+Image location specified as a file directory containing the image files 
+-----------------------------------------------------------------------
+In this case the IIIF manifest does not include any image information from the METS file such as location and labels. Instead it determines image properties from the images and can generate labels using a combination of a regular expression defined in the mets2iiif configuration file and the image file name.
+Example
+```
+python mets2iiif.py --config example/mets2.cfg --input ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/local_flocatMets.xml --image_src directory  --image_location ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/images/MSOppenheimAdd871_1452598088645_jpg/  --compact False --output example/manifest.json
+```
+Conversion of TEI files
+-----------------------
+Use the tei2iiif.py file to convert TEI files to IIIF.
+```
+usage: tei2iiif.py [-h] --config CONFIG --input INPUT --output OUTPUT --image_src IMAGE_SRC [--image_location IMAGE_LOCATION] --compact COMPACT
+```
+
+
+Image location and label specified with a single image file
+-----------------------------------------------------------
+The image location is defined as a single file location in the command line parameters. The image label and image properties will be determined from the file, together with the use of an optional regular expression defined in the tei2iiif configuration file.
+Example
+```
+python tei2iiif.py --config example/tei.cfg --input example/tei.xml --image_src file  --image_location ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/images/MSOppenheimAdd871_1452598088645_jpg/oulis2015-bxx-0010-0.jpg  --compact False --output example/manifest.json
+```
+Image location specified as a file directory containing the image files 
+-----------------------------------------------------------------------
+In this case the IIIF manifest does not include any image information from the TEI file such as location and labels. Instead it determines image properties from the images and can generate labels using a combination of a regular expression defined in the tei2iiif configuration file and the image file name.
+Example
+```
+python tei2iiif.py --config example/tei.cfg --input example/tei.xml --image_src directory  --image_location ~/apps/MetadataTransformation/samples/MSOppenheimAdd871/images/MSOppenheimAdd871_1452598088645_jpg/  --compact False --output example/manifest.json
+```
+
 
 
 

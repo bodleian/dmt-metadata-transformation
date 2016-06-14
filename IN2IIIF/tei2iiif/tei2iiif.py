@@ -13,8 +13,11 @@ import libxml2, sys
 from lxml import etree
 from io import StringIO, BytesIO
 import os.path
- 
+
+
 execfile('../in2iiif.py')
+
+
 
 def main():
     
@@ -211,7 +214,6 @@ class Tei2iiif(In2iiif):
          """
          Define canvases for manifest. Assumption that there is one canvas per image in a directory specified in command line.
          """
-         
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
          
          if (arg.image_src == 'directory') and (os.path.isdir(arg.image_location) == True): # canvases and images defined using files in image directory
@@ -220,7 +222,6 @@ class Tei2iiif(In2iiif):
              
              # iterate through image files in the directory
              for file in sorted(os.listdir(image_directory_location)):
-                     
                  counter += 1
                  image_location = image_directory_location + os.sep + file # determine file path for image  
                  canvas_id = arg.canvas_id +"-" + str(counter)  # use canvas id prefix defined in config
@@ -249,7 +250,8 @@ class Tei2iiif(In2iiif):
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
          
          if ((arg.canvas_label_regex != '') and (filename != '')) :
-             # use regex with filename to determine canvas label
+             # use regex with filename to determine canvas label 
+             
              regex = re.compile( arg.canvas_label_regex )
              matchObj = re.match( regex  , filename)
              canvas_label = matchObj.group()   
@@ -271,11 +273,7 @@ class Tei2iiif(In2iiif):
          """Define annotation for canvas."""
          
          arg = GlobalConfig() # instance of GlobalConfig to hold global variables
-                  
          annotation = canvas.annotation()
-        
-     #    if arg.annotation_id != "":
-     #    annotation.id = arg.annotation_id + canvas_id
          annotation.id = canvas_id
          return annotation        
      

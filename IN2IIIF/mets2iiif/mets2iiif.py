@@ -11,8 +11,6 @@ import ast
 import argparse
 import libxml2, sys
 import os
-import ntpath
-import re
 
 from lxml import etree
 from io import StringIO, BytesIO
