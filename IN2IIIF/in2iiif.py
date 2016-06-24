@@ -99,12 +99,24 @@ class In2iiif():
          arg = GlobalConfig() # instance of GlobalConfig        
          config = ConfigParser.ConfigParser() # instance of config file parser
          
-         
+         # check that base_metadata_dir is a valid directory on system, otherwise generate error with meaningful message - causes @context error message in factory otherwise
+            
+         try:
+             config.read(arg.config) # read configuration file defined in command line arguments   
+         except IOError as e:
+             print('An error occurred - Cannot read configuration file: ', e)
+             sys.exit(0)
+             
+         try:
+             if (os.path.isdir(config.get('manifest','base_metadata_dir')) == False):
+                raise Exception('An error occurred - Please correct the base_metadata_dir parameter in the config file to a valid directory')
+         except Exception as e:
+             print(e)
+             sys.exit(0)   
          
          try:
-             config.read(arg.config) # read configuration file defined in command line arguments
              
-         
+
              # pass values to instance of GlobalConfig as arguments, that will add them to dictionary
              GlobalConfig(   
                     manifest_uri = config.get('manifest','uri'),
@@ -128,14 +140,13 @@ class In2iiif():
                     annotation_id_path = config.get('annotation', 'id_path'),
                     image_location_path = config.get('image', 'location_path'),
                     metadata = '')
-         
-         except IOError as e:
-             print('Cannot read configuration file: ', e)
-             sys.exit(0)
-         
+
          except Exception as e:
              print('Error when adding values from the configuration file to the global dictionary: ', e)
-             sys.exit(0)                 
+             sys.exit(0)     
+             
+         
+                             
         
     def parseArguments(self):
          """Parses command line arguments and adds values to GlobalConfig attribute dictionary"""
