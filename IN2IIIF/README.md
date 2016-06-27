@@ -212,49 +212,53 @@ An example configuration file for METS is shown below, divided into the followin
 ##### Manifest
   
 ###### uri
- - Where the resources live on the web
+Where the resources live on the web
 
 ######  id
- - identifier for manifest
+identifier for manifest
  
 ###### base_metadata_dir
- -  Where the resources live on disk
+ Where the resources live on disk
  
 ###### base_image_uri
- - Default Image API information
+Default Image API information
  
 ###### iiif_image_info_version
 
 ###### iiif_image_info_compliance
  
-###### debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
+###### debug
+whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
  
-###### label - human-readable label for manifest
+###### label
+human-readable label for manifest
 
-###### description - description of manifest
+###### description
+description of manifest
 
-###### viewingDirection - viewing direction of image
+###### viewingDirection
+viewing direction of image
 
 ##### Sequence
 
 ###### name 
 
 ###### id
- - sequence id
+sequence id
 
 ###### label
- - sequence label
+sequence label
 
 ##### Canvas
 
 ###### id
- - canvas id
+canvas id
 
 ###### label_prefix
- - canvas label
+canvas label
 
 ###### label_regex
- - regular expression to extract label from file name
+regular expression to extract label from file name
 
 ##### Annotation
 
@@ -285,6 +289,8 @@ The metadata section contains xpath values that allow values to be extracted fro
  * title
  * type
 
+#### Example METS configuration file
+Also see the example mets.cfg file in the example directory associated with the mets2iiif.py script.
 
 ```
 [manifest]
