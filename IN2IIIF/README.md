@@ -75,6 +75,15 @@ The python modules or packages, lxml, pillow and ManifestFactory, mentioned abov
 https://git-scm.com/
 Use git to download a copy of the IN2IIIF code.
 
+### libxml2
+
+- Download libxml binary (http://xmlsoft.org/sources/libxml2-2.9.3.tar.gz), or "curl -O http://xmlsoft.org/sources/libxml2-2.9.3.tar.gz"
+- tar xvzf libxml2-2.9.3.tar.gz 
+- cd libxml2-2.9.3
+- ./configure --with-python=~/MetadataTransformation/lib/python2.7/ (or whatever system python path is)
+-- (replace —with-python path with usr/bin/python if not using a virtualenv)
+- make
+- sudo make install
 
 
 
@@ -215,10 +224,10 @@ An example configuration file for METS is shown below, divided into the followin
 Where the resources live on the web
 
 ######  id
-identifier for manifest
+Identifier for manifest
  
 ###### base_metadata_dir
- Where the resources live on disk
+Where the resources live on disk
  
 ###### base_image_uri
 Default Image API information
@@ -228,7 +237,10 @@ Default Image API information
 ###### iiif_image_info_compliance
  
 ###### debug
-whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
+whether to show debug messages in ManifestFactory - options: 
+- warn
+- error
+- error_on_warning
  
 ###### label
 human-readable label for manifest
@@ -252,13 +264,21 @@ sequence label
 ##### Canvas
 
 ###### id
-canvas id
+Canvas id
 
 ###### label_prefix
-canvas label
+Canvas label
 
 ###### label_regex
-regular expression to extract label from file name
+Regular expression to extract canvas label from the image file name(s).
+
+The following regular expression will create a label from the image file name, it will only extract the leading characters that include alphabetical characters (case-insensitive) and a hyphen.
+
+[a-zA-Z0-9\-]*
+
+As a consequence the file suffix will not be included in the matched string, as the regular expression does not include a period.
+
+To learn more about regular expressions, go to http://regexone.com/ .
 
 ##### Annotation
 
