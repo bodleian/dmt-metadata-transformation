@@ -341,6 +341,7 @@ label:					sequence label
 [canvas]
 id:						page
 label:					Page 
+label_regex:                            [a-zA-Z0-9-]*
 
 [annotation]
 uri:					scheme://host/prefix/%s/annotation/%s/info.json
