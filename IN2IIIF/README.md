@@ -11,12 +11,40 @@ IN2IIIF supports the conversion of two data formats:
 * METS (http://www.loc.gov/standards/mets/), and 
 * TEI P5 (http://www.tei-c.org/Guidelines/P5/)
 
-# Dependencies
+# Quick start
+
+- install IN2IIIF
+- decide what format you are converting from, and where to get the image(s) data
+- use the script that corresponds to the format you are converting, e.g. mets2iiif.py for METS, tei2iiif.py for TEI
+- modify the configuration file for the script that you will be using to extract the correct attributes from the input files - you can modify one of the example configuration files provided in the example folders
+- consider what values are needed for the command line parameters, and run the script with the defined parameters
+ 
+
+
+
+# Installation
+
+
+
+Download a copy of IN2IIF using git:
+git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git
+
+Go into the IN2IIIF directory and install the python dependencies using pip:
+
+```
+git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git
+cd IN2IIIF
+pip install -r requirements.txt
+```
+
+
+
+## Dependencies
 
 The use of IN2IIIF has a number of dependencies relating to the use of third-party python packages and modules.
 
 
-## Python 2.7
+### Python 2.7
 
 IN2IIIF uses a python module (ManifestFactory) and this requires that Python version 2.7 is available.
 ##ManifestFactory
@@ -26,18 +54,18 @@ IN2IIIF makes use of the ManifestFactory python module to generate the IIIF pres
 
 Use of ManifestFactory requires the use of ImageMagick or Python Image Library if image dimensions are to be determined programmatically.
 
-## pillow
+### pillow
 
 https://pypi.python.org/pypi/Pillow
 Pillow is a python package that incorporates the Python Image Library.
 
 
-## lxml
+### lxml
 
 http://lxml.de/
 lxml is a python library for XML and HTML processing 
 
-## Pip
+### Pip
 
 https://pypi.python.org/pypi/pip
 Pip is a tool for installation python packages.
@@ -47,18 +75,19 @@ The python modules or packages, lxml, pillow and ManifestFactory, mentioned abov
 https://git-scm.com/
 Use git to download a copy of the IN2IIIF code.
 
-# Installation
 
-Download a copy of IN2IIF using git:
-git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git
 
-Go into the IN2IIIF directory and install the python dependencies using pip:
 
-```
-git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git 
-cd IN2IIIF
-pip install -r requirements.txt
-```
+
+
+
+
+
+
+
+
+
+
 
 
 # Usage
