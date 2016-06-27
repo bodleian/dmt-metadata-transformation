@@ -167,6 +167,7 @@ The script is configured using both command line parameters and a configuration 
   
 
 ### Command line
+The following parameters are set on the command line.
 
 #### --config
 Specifies the location of configuration file
@@ -196,11 +197,11 @@ Specifies the location of the IIIF manifest file that is output from the convers
 ### Configuration file 
 
 
-The configuration file can/will contain options that are specific to a particular format transformation. 
+The configuration file specified in the command line parameter contains parameters that are specific to the format being transformed.
 
-The variables defined in the configuration file are copied to the IIIF manifest output, or used to determine the values, using XPath for instance, from the input file. 
+The parameters defined in the configuration file are inserted into the IIIF manifest output, or else used to extract values from the input file, for inclusion in the IIIF manifest file. 
 
-METS
+#### METS
 An example configuration file for METS is shown below, divided into the following sections:
  * manifest
  * sequence
@@ -208,42 +209,64 @@ An example configuration file for METS is shown below, divided into the followin
  * annotation
  * metadata
 
-Manifest
+##### Manifest
   
- * uri - Where the resources live on the web
- * id - identifier for manifest
+###### uri
+ - Where the resources live on the web
+
+######  id
+ - identifier for manifest
  
- * base_metadata_dir -  Where the resources live on disk
+###### base_metadata_dir
+ -  Where the resources live on disk
  
- * base_image_uri - Default Image API information
- * iiif_image_info_version
- * iiif_image_info_compliance
+###### base_image_uri
+ - Default Image API information
  
- * debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
+###### iiif_image_info_version
+
+###### iiif_image_info_compliance
  
- * label - human-readable label for manifest
- * description - description of manifest
- * viewingDirection - viewing direction of image
+###### debug - whether to show debug messages in ManifestFactory - options: warn,error,error_on_warning
+ 
+###### label - human-readable label for manifest
 
-Sequence
+###### description - description of manifest
 
- * name 
- * id - sequence id
- * label - sequence label
+###### viewingDirection - viewing direction of image
 
-Canvas
+##### Sequence
 
- * id - canvas id
- * label_prefix - canvas label
- * label_regex - regular expression to extract label from file name
-Annotation
- * uri
- * id_path - annotation id
+###### name 
 
-Image 
- * location_path
+###### id
+ - sequence id
 
-Metadata
+###### label
+ - sequence label
+
+##### Canvas
+
+###### id
+ - canvas id
+
+###### label_prefix
+ - canvas label
+
+###### label_regex
+ - regular expression to extract label from file name
+
+##### Annotation
+
+###### uri
+
+###### id_path
+annotation id
+
+##### Image 
+###### location_path
+
+##### Metadata
 
 The metadata section contains xpath values that allow values to be extracted from the input file for a default set of Dublin Core properties:
  * contributor
