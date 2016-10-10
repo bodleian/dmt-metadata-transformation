@@ -27,12 +27,12 @@ IN2IIIF supports the conversion of two data formats:
 
 
 Download a copy of IN2IIF using git:
-git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git
+git clone git@github.com:bodleian/dmt-metadata-transformation.git
 
 Go into the IN2IIIF directory and install the python dependencies using pip:
 
 ```
-git clone https://gitlab.bodleian.ox.ac.uk/dmt/MetadataTransformation.git
+git clone git@github.com:bodleian/dmt-metadata-transformation.git
 cd IN2IIIF
 pip install -r requirements.txt
 ```
