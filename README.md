@@ -21,10 +21,7 @@ IN2IIIF supports the conversion of two data formats:
 
 # Installation
 
-Download a copy of IN2IIF using git:
-git clone git@github.com:bodleian/dmt-metadata-transformation.git
-
-Go into the IN2IIIF directory and install the python dependencies using pip:
+Download a copy of IN2IIF using git, go into the IN2IIIF directory and install the python dependencies using pip:
 
 ```
 git clone git@github.com:bodleian/dmt-metadata-transformation.git
