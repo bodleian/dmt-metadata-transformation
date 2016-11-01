@@ -202,7 +202,7 @@ An example configuration file for METS is shown below, divided into the followin
  * annotation
  * metadata
 
-##### Manifest
+#### Manifest
 
 |  Attribute  |  Meaning |
 | ----------- | -------- |
@@ -218,16 +218,18 @@ An example configuration file for METS is shown below, divided into the followin
 |  viewingDirection  |  viewing direction of image  |
 
 
-##### Sequence
+#### Sequence
 
 |  Attribute  |  Meaning |
+| ----------- | -------- |
 |  name  |  |
 |  id  |  sequence id  |
 |  label  |  sequence label  |
 
-##### Canvas
+#### Canvas
 
 |  Attribute  |  Meaning |
+| ----------- | -------- |
 |  id  |  Canvas id  |
 |  label_prefix  |  Canvas label  |
 |  label_regex  |  <p>Regular expression to extract canvas label from the image file name(s).</p><p>The following regular expression will create a label from the image file name, it will only extract the leading characters that include alphabetical characters (case-insensitive) and a hyphen.</p><p>[a-zA-Z0-9\-]*</p><p>As a consequence the file suffix will not be included in the matched string, as the regular expression does not include a period.</p><p>To learn more about regular expressions, go to http://regexone.com/ .</p>
