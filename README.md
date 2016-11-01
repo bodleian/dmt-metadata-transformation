@@ -172,9 +172,6 @@ python tei2iiif.py --config example/tei.cfg --input example/tei.xml --image_src 
 # Configuration options
 The script is configured using both command line parameters and a configuration file. This section describes the parameters that can be set on the command line and in the configuration file.
 
-
-
-
 ## Command line
 The following parameters are set on the command line.
 
@@ -194,7 +191,6 @@ The configuration file specified in the command line parameter contains paramete
 
 The parameters defined in the configuration file are inserted into the IIIF manifest output, or else used to extract values from the input file, for inclusion in the IIIF manifest file.
 
-### METS
 An example configuration file for METS is shown below, divided into the following sections:
  * manifest
  * sequence
@@ -202,9 +198,70 @@ An example configuration file for METS is shown below, divided into the followin
  * annotation
  * metadata
 
+ #### Example METS configuration file
+ Also see the example mets.cfg file in the example directory associated with the mets2iiif.py script.
+
+ ```
+ [manifest]
+ # Where the resources live on the web
+ uri:					http://www.example.org/path/to/object/
+ id: 					manifest
+
+ # Where the resources live on disk
+ base_metadata_dir: 		/home/dmt/Documents/IIIF_Ingest/METS/
+
+ # Default Image API information
+ base_image_uri: 		http://www.example.org/path/to/image/api/
+ iiif_image_info_version:2.0
+ iiif_image_info_compliance:2
+
+ # options: warn,error,error_on_warning
+ debug: 					warn
+
+ label: 					Example Manifest
+ description:			This is a longer description of the manifest
+ viewingDirection:		left-to-right
+
+ [sequence]
+ name:					SequenceName
+ id:						http://www.example.org/path/to/object/sequence/normal
+ label:					sequence label
+
+ [canvas]
+ id:						page
+ label:					Page
+ label_regex:                            [a-zA-Z0-9-]*
+
+ [annotation]
+ uri:					scheme://host/prefix/%s/annotation/%s/info.json
+ id_path:				/mets:mets/mets:structMap[@TYPE='PHYSICAL']//mets:div[@ID='%s']/@CONTENTIDS
+
+
+ [metadata]
+ contributor:	//mods:mods/mods:name[@mods:role='contributor']/mods:displayForm
+ coverage:		concat(//mods:mods/mods:subject/mods:temporal,' ', //mods:mods/mods:subject/mods:geographic)
+ creator:		//mods:mods/mods:name[@mods:role='creator']/mods:displayForm
+ date:			//mods:mods/mods:originInfo/mods:dateCreated
+ description:	//mods:mods/mods:note
+ format:			concat(//mods:mods/mods:physicalDescription/mods:form,' ', //mods:mods/mods:physicalDescription/mods:extent, ' ',  //mods:mods/mods:physicalDescription/mods:extent/@unit, ' ', //mods:mods/mods:physicalDescription/mods:note)
+ identifier:		//mods:mods/mods:identifier
+ language:		//mods:mods/mods:language/mods:languageTerm
+ publisher:		//mods:mods/mods:originInfo/mods:publisher
+ relation:		//mods:mods/mods:relatedItem/@displayLabel
+ rights:			//mods:mods/mods:accessCondition
+ source:
+ subject:		//mods:mods/mods:subject/mods:topic
+ title:			//mods:mods/mods:titleInfo/mods:title
+ type:			//mods:mods/mods:typeOfResource
+
+
+ ```
+
+The tables below specify the attributes and valid values for the configuration file.
+
 ### Manifest
 
-|  Attribute  |  Meaning |
+|  Attribute  |  Value |
 | ----------- | -------- |
 |  uri        |  Where the resources live on the web  |
 |  id         |  Identifier for manifest  |
@@ -220,7 +277,7 @@ An example configuration file for METS is shown below, divided into the followin
 
 ### Sequence
 
-|  Attribute  |  Meaning |
+|  Attribute  |  Value |
 | ----------- | -------- |
 |  name  |  |
 |  id  |  sequence id  |
@@ -228,91 +285,21 @@ An example configuration file for METS is shown below, divided into the followin
 
 ### Canvas
 
-|  Attribute  |  Meaning |
+|  Attribute  |  Value |
 | ----------- | -------- |
 |  id  |  Canvas id  |
 |  label_prefix  |  Canvas label  |
 |  label_regex  |  <p>Regular expression to extract canvas label from the image file name(s).</p><p>The following regular expression will create a label from the image file name, it will only extract the leading characters that include alphabetical characters (case-insensitive) and a hyphen.</p><p>[a-zA-Z0-9\-]*</p><p>As a consequence the file suffix will not be included in the matched string, as the regular expression does not include a period.</p><p>To learn more about regular expressions, go to http://regexone.com/ .</p>
 
+### Annnotation
 
+|  Attribute  |  Value |
+| ----------- | -------- |
+| uri |  |
+| id_path |  annotation id  |
+|
 
-
-
-
-
-##### Manifest
-
-###### uri
-Where the resources live on the web
-
-######  id
-Identifier for manifest
-
-###### base_metadata_dir
-Where the resources live on disk
-
-###### base_image_uri
-Default Image API information
-
-###### iiif_image_info_version
-
-###### iiif_image_info_compliance
-
-###### debug
-whether to show debug messages in ManifestFactory - options:
-- warn
-- error
-- error_on_warning
-
-###### label
-human-readable label for manifest
-
-###### description
-description of manifest
-
-###### viewingDirection
-viewing direction of image
-
-##### Sequence
-
-###### name
-
-###### id
-sequence id
-
-###### label
-sequence label
-
-##### Canvas
-
-###### id
-Canvas id
-
-###### label_prefix
-Canvas label
-
-###### label_regex
-Regular expression to extract canvas label from the image file name(s).
-
-The following regular expression will create a label from the image file name, it will only extract the leading characters that include alphabetical characters (case-insensitive) and a hyphen.
-
-[a-zA-Z0-9\-]*
-
-As a consequence the file suffix will not be included in the matched string, as the regular expression does not include a period.
-
-To learn more about regular expressions, go to http://regexone.com/ .
-
-##### Annotation
-
-###### uri
-
-###### id_path
-annotation id
-
-##### Image
-###### location_path
-
-##### Metadata
+### Metadata
 
 The metadata section contains xpath values that allow values to be extracted from the input file for a default set of Dublin Core properties:
  * contributor
@@ -330,62 +317,3 @@ The metadata section contains xpath values that allow values to be extracted fro
  * subject
  * title
  * type
-
-#### Example METS configuration file
-Also see the example mets.cfg file in the example directory associated with the mets2iiif.py script.
-
-```
-[manifest]
-# Where the resources live on the web
-uri:					http://www.example.org/path/to/object/
-id: 					manifest
-
-# Where the resources live on disk
-base_metadata_dir: 		/home/dmt/Documents/IIIF_Ingest/METS/
-
-# Default Image API information
-base_image_uri: 		http://www.example.org/path/to/image/api/
-iiif_image_info_version:2.0
-iiif_image_info_compliance:2
-
-# options: warn,error,error_on_warning
-debug: 					warn
-
-label: 					Example Manifest
-description:			This is a longer description of the manifest
-viewingDirection:		left-to-right
-
-[sequence]
-name:					SequenceName
-id:						http://www.example.org/path/to/object/sequence/normal
-label:					sequence label
-
-[canvas]
-id:						page
-label:					Page
-label_regex:                            [a-zA-Z0-9-]*
-
-[annotation]
-uri:					scheme://host/prefix/%s/annotation/%s/info.json
-id_path:				/mets:mets/mets:structMap[@TYPE='PHYSICAL']//mets:div[@ID='%s']/@CONTENTIDS
-
-
-[metadata]
-contributor:	//mods:mods/mods:name[@mods:role='contributor']/mods:displayForm
-coverage:		concat(//mods:mods/mods:subject/mods:temporal,' ', //mods:mods/mods:subject/mods:geographic)
-creator:		//mods:mods/mods:name[@mods:role='creator']/mods:displayForm
-date:			//mods:mods/mods:originInfo/mods:dateCreated
-description:	//mods:mods/mods:note
-format:			concat(//mods:mods/mods:physicalDescription/mods:form,' ', //mods:mods/mods:physicalDescription/mods:extent, ' ',  //mods:mods/mods:physicalDescription/mods:extent/@unit, ' ', //mods:mods/mods:physicalDescription/mods:note)
-identifier:		//mods:mods/mods:identifier
-language:		//mods:mods/mods:language/mods:languageTerm
-publisher:		//mods:mods/mods:originInfo/mods:publisher
-relation:		//mods:mods/mods:relatedItem/@displayLabel
-rights:			//mods:mods/mods:accessCondition
-source:
-subject:		//mods:mods/mods:subject/mods:topic
-title:			//mods:mods/mods:titleInfo/mods:title
-type:			//mods:mods/mods:typeOfResource
-
-
-```
