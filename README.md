@@ -5,11 +5,12 @@
 
 IN2IIIF is a python application that converts a number of data formats to a manifest file conforming to the IIIF Manifest Presentation API 2.0 specification (http://iiif.io/api/presentation/2.0/).
 
-IN2IIIF is intended to be used on the command line, and with workflow software such as Goobi (https://www.intranda.com/en/digiverso/goobi/workflow/).
+IN2IIIF is intended to be used from the command line.
 
 IN2IIIF supports the conversion of two data formats:
 * METS (http://www.loc.gov/standards/mets/), and
 * TEI P5 (http://www.tei-c.org/Guidelines/P5/)
+
 
 # Quick start
 
@@ -60,10 +61,12 @@ When installing the dependencies, you may encounter an error saying it can't fin
 
 Use the mets2iiif.py file in the mets2iiif directory to convert METS files to IIIF.
 
-There are three options available when converting METS files to IIIF:
-* Image location and label specified in the METS file
-* Extract information on image location from a single image file
-* Extract information on image location from a file directory containing the image files
+The key pieces of information in a IIIF manifest are the location and file names of the images being listed, the size of the images, and their labels.
+
+There are three options available for generating image locations, labels and sizes when converting METS files to IIIF:
+* From information specified in the METS file
+* From information gathered from a single image file
+* From information gathered from a directory of image files
 
 The command line parameters you use depends on the type of conversion you want to achieve.
 ```
