@@ -169,13 +169,13 @@ python tei2iiif.py --config example/tei.cfg --input example/tei.xml --image_src 
 
 
 
-## Configuration options
+# Configuration options
 The script is configured using both command line parameters and a configuration file. This section describes the parameters that can be set on the command line and in the configuration file.
 
 
 
 
-### Command line
+## Command line
 The following parameters are set on the command line.
 
 |  Command   |  Operation  |
@@ -188,13 +188,13 @@ The following parameters are set on the command line.
 |  --output  | Specifies the location of the IIIF manifest file that is output from the conversion process |
 
 
-### Configuration file
+## Configuration file
 
 The configuration file specified in the command line parameter contains parameters that are specific to the format being transformed.
 
 The parameters defined in the configuration file are inserted into the IIIF manifest output, or else used to extract values from the input file, for inclusion in the IIIF manifest file.
 
-#### METS
+### METS
 An example configuration file for METS is shown below, divided into the following sections:
  * manifest
  * sequence
@@ -202,7 +202,7 @@ An example configuration file for METS is shown below, divided into the followin
  * annotation
  * metadata
 
-#### Manifest
+### Manifest
 
 |  Attribute  |  Meaning |
 | ----------- | -------- |
@@ -218,7 +218,7 @@ An example configuration file for METS is shown below, divided into the followin
 |  viewingDirection  |  viewing direction of image  |
 
 
-#### Sequence
+### Sequence
 
 |  Attribute  |  Meaning |
 | ----------- | -------- |
@@ -226,7 +226,7 @@ An example configuration file for METS is shown below, divided into the followin
 |  id  |  sequence id  |
 |  label  |  sequence label  |
 
-#### Canvas
+### Canvas
 
 |  Attribute  |  Meaning |
 | ----------- | -------- |
