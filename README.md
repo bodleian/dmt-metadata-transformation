@@ -182,7 +182,7 @@ The following parameters are set on the command line.
 | ---------- | ----------- |
 |  --config  | Specifies the location of configuration file |
 | --input    | Specifies the location of the input file to be transformed to IIIF |
-| --image_src  | Specifies the source of the image file(s) that are used in the conversion process. A controlled vocabulary is used, with the following options: <ul><li>- directory - images are located in a directory specified by the image_location parameter</li><li> - file - a single image is used with its location specified by the image_location parameter</li><li> - mets_file - the location of the image(s) is defined in the METS file</li></ul> |
+| --image_src  | Specifies the source of the image file(s) that are used in the conversion process. A controlled vocabulary is used, with the following options: <ul><li>directory - images are located in a directory specified by the image_location parameter</li><li>file - a single image is used with its location specified by the image_location parameter</li><li>mets_file - the location of the image(s) is defined in the METS file</li></ul> |
 |  --image_location  | Specifies the location of an image or directory of images -  required if the image_src parameter value is "directory" or "file" |
 |  --compact  | Specifies the style of the IIIF manifest JSON. A controlled vocabulary is used with two options: <ul><li>compact</li><li>human-readable</li></ul>  |
 |  --output  | Specifies the location of the IIIF manifest file that is output from the conversion process |
