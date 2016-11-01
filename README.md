@@ -19,12 +19,7 @@ IN2IIIF supports the conversion of two data formats:
 - modify the configuration file for the script that you will be using to extract the correct attributes from the input files - you can modify one of the example configuration files provided in the example folders
 - consider what values are needed for the command line parameters, and run the script with the defined parameters
 
-
-
-
 # Installation
-
-
 
 Download a copy of IN2IIF using git:
 git clone git@github.com:bodleian/dmt-metadata-transformation.git
@@ -37,41 +32,17 @@ cd IN2IIIF
 pip install -r requirements.txt
 ```
 
+### Python 2.7 only
 
+IN2IIIF uses a python module (ManifestFactory) and this requires that Python version 2.7 is available.
 
 ## Dependencies
 
 The use of IN2IIIF has a number of dependencies relating to the use of third-party python packages and modules.
 
-
-### Python 2.7
-
-IN2IIIF uses a python module (ManifestFactory) and this requires that Python version 2.7 is available.
-
-###ManifestFactory
-
-IN2IIIF makes use of the ManifestFactory python module to generate the IIIF presentation manifest, available at https://github.com/IIIF/presentation-api/tree/master/implementations/manifest-factory
-
-###ImageMagick or Python Image Library (PIL)
-
-Use of ManifestFactory requires the use of ImageMagick or Python Image Library if image dimensions are to be determined programmatically.
-
-### pillow
-
-https://pypi.python.org/pypi/Pillow
-Pillow is a python package that incorporates the Python Image Library.
-
-### lxml
-
-http://lxml.de/
-lxml is a python library for XML and HTML processing
-
-### Pip
-
-https://pypi.python.org/pypi/pip
-Pip is a tool for installation python packages.
-
-The python modules or packages, lxml, pillow and ManifestFactory, mentioned above can be installed using pip (see below).
+- **ManifestFactory**: IN2IIIF makes use of the ManifestFactory python module to generate the IIIF presentation manifest. This was available at https://github.com/IIIF/presentation-api/tree/master/implementations/manifest-factory, but it appears to have disappeared...
+- **Pillow**: Pillow is a python package that incorporates the Python Image Library. https://pypi.python.org/pypi/Pillow
+- **lxml**: lxml is a python library for XML and HTML processing. http://lxml.de/
 
 ### libxml2
 
@@ -84,20 +55,6 @@ When installing the dependencies, you may encounter an error saying it can't fin
 -- (replace —with-python path with usr/bin/python if not using a virtualenv)
 - make
 - sudo make install
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Usage
 
