@@ -178,11 +178,11 @@ The script is configured using both command line parameters and a configuration 
 ### Command line
 The following parameters are set on the command line.
 
-|  Command  |  Operation  |
-| --------- | ----------- |
-|  --config | Specifies the location of configuration file |
-| --input   | Specifies the location of the input file to be transformed to IIIF |
-| --image_src | Specifies the source of the image file(s) that are used in the conversion process. A controlled vocabulary is used, with the following options: <ul><li>- directory - images are located in a directory specified by the image_location parameter</li><li> - file - a single image is used with its location specified by the image_location parameter</li><li> - mets_file - the location of the image(s) is defined in the METS file</li></ul> |
+|  Command   |  Operation  |
+| ---------- | ----------- |
+|  --config  | Specifies the location of configuration file |
+| --input    | Specifies the location of the input file to be transformed to IIIF |
+| --image_src  | Specifies the source of the image file(s) that are used in the conversion process. A controlled vocabulary is used, with the following options: <ul><li>- directory - images are located in a directory specified by the image_location parameter</li><li> - file - a single image is used with its location specified by the image_location parameter</li><li> - mets_file - the location of the image(s) is defined in the METS file</li></ul> |
 
 ####
 Specifies the source of the image file(s) that are used in the conversion process. A controlled vocabulary is used, with the following options:
