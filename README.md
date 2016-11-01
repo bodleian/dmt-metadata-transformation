@@ -188,19 +188,7 @@ The following parameters are set on the command line.
 |  --output  | Specifies the location of the IIIF manifest file that is output from the conversion process |
 
 
-#### --image_location
-
-#### --compact
-Specifies the style of the IIIF manifest JSON. A controlled vocabulary is used with two options:
-- compact
-- human-readable
-
-#### --output
-Specifies the location of the IIIF manifest file that is output from the conversion process
-
-
 ### Configuration file
-
 
 The configuration file specified in the command line parameter contains parameters that are specific to the format being transformed.
 
@@ -213,6 +201,34 @@ An example configuration file for METS is shown below, divided into the followin
  * canvas
  * annotation
  * metadata
+
+|  Attribute  |  Meaning |
+| ----------- | -------- |
+|    **Manifest**        |
+|  uri        |  Where the resources live on the web  |
+|  id         |  Identifier for manifest  |
+|  base_metadata_dir  | Where the resources live on disk  |
+|  base_image_uri  |  Default Image API information
+|  iiif_image_info_version  |  |
+|  iiif_image_info_compliance  |  |
+|  debug  |  whether to show debug messages in ManifestFactory - options: <ul><li>warn</li><li>error</li> <li>error_on_warning</li></ul>  |
+|  label  |  human-readable label for manifest  |
+|  description  |  description of manifest  |
+|  viewingDirection  |  viewing direction of image  |
+|  **Sequence**  |
+|  name  |  |
+|  id  |  sequence id  |
+|  label  |  sequence label  |
+|  **Canvas**  |
+|  id  |  Canvas id  |
+|  label_prefix  |  Canvas label  |
+|  label_regex  |  <p>Regular expression to extract canvas label from the image file name(s).</p><p>The following regular expression will create a label from the image file name, it will only extract the leading characters that include alphabetical characters (case-insensitive) and a hyphen.</p><p>[a-zA-Z0-9\-]*</p><p>As a consequence the file suffix will not be included in the matched string, as the regular expression does not include a period.</p><p>To learn more about regular expressions, go to http://regexone.com/ .</p>
+
+
+
+
+
+
 
 ##### Manifest
 
