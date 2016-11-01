@@ -202,9 +202,9 @@ An example configuration file for METS is shown below, divided into the followin
  * annotation
  * metadata
 
-|  Attribute   |  Meaning |
-| :----------: | -------- |
-||    **Manifest**        |
+|  Attribute  |  Meaning |
+| ----------- | -------- |
+|    **Manifest**        
 |  uri        |  Where the resources live on the web  |
 |  id         |  Identifier for manifest  |
 |  base_metadata_dir  | Where the resources live on disk  |
