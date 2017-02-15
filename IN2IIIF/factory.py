@@ -1,4 +1,3 @@
-
 import os, sys
 import commands
 import urllib2
@@ -74,12 +73,12 @@ GOOD_HTML_TAGS = ['a', 'b', 'br', 'i', 'img', 'p', 'span']
 KEY_ORDER = ["@context", "@id", "@type", "@value", "@language", "label", "value",
              "metadata", "description", "thumbnail", "attribution", "license", "logo",
              "format", "height", "width", "startCanvas",
-             "viewingDirection", "viewingHint", 
+             "viewingDirection", "viewingHint",
              "profile", "seeAlso", "search", "formats", "qualities", "supports",
              "scale_factors", "scaleFactors", "tile_width", "tile_height", "tiles", "sizes",
-             "within", "motivation", "stylesheet", "resource", 
-             "on", "default", "item", "style", "full", "selector", "chars", "language", 
-             "sequences", "structures", "canvases", "resources", "images", "otherContent" ] 
+             "within", "motivation", "stylesheet", "resource",
+             "on", "default", "item", "style", "full", "selector", "chars", "language",
+             "sequences", "structures", "canvases", "resources", "images", "otherContent" ]
 
 KEY_ORDER_HASH = dict([(KEY_ORDER[x],x) for x in range(len(KEY_ORDER))])
 
@@ -153,13 +152,13 @@ class ManifestFactory(object):
     def maybe_warn(self, msg):
         if self.debug_level == "warn":
             self.log_stream.write(msg + "\n")
-            try:    
+            try:
                 self.log_stream.flush()
             except:
                 pass
         elif self.debug_level == "error_on_warning":
             # We don't know the type, just raise a MetadataError
-            raise MetadataError(msg)        
+            raise MetadataError(msg)
 
     def assert_base_metadata_uri(self):
         if not self.metadata_base:
@@ -188,7 +187,7 @@ class ManifestFactory(object):
 
     def set_base_image_dir(self, dr):
         if not dr:
-            raise ValueError("Must provide a directory name to set the base directory to")            
+            raise ValueError("Must provide a directory name to set the base directory to")
         self.default_base_image_dir = dr
 
 
@@ -199,7 +198,7 @@ class ManifestFactory(object):
         # No trailing / as that's what the base URI really is
         # Need to add it back all over the place though :(
         if not uri:
-            raise ValueError("Must provide a URI to set the base URI to")    
+            raise ValueError("Must provide a URI to set the base URI to")
         if uri[-1] == "/":
             uri = uri[:-1]
         self.default_base_image_uri = uri
@@ -210,7 +209,7 @@ class ManifestFactory(object):
         if not version in ['1.0', '1.1', '2.0']:
             raise ConfigurationError("Only versions 1.0, 1.1, 2.0 are known")
         if not lvl in ['0','1','2']:
-            raise ConfigurationError("Level must be 0, 1 or 2")            
+            raise ConfigurationError("Level must be 0, 1 or 2")
         self.default_image_api_version = version
         self.default_image_api_level = lvl
         if version == "1.0":
@@ -220,9 +219,9 @@ class ManifestFactory(object):
             self.default_image_api_profile = "http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level" + lvl
             self.default_image_api_context = "http://library.stanford.edu/iiif/image-api/1.1/context.json"
         else:
-            self.default_image_api_profile = "http://iiif.io/api/image/2/level%s.json" % lvl        
+            self.default_image_api_profile = "http://iiif.io/api/image/2/level%s.json" % lvl
             self.default_image_api_context = "http://iiif.io/api/image/2/context.json"
-    
+
     def set_iiif_image_conformance(self, version, lvl):
         return self.set_iiif_image_info(version, lvl)
 
@@ -262,13 +261,13 @@ class ManifestFactory(object):
 
     def image(self, ident, label="", iiif=False, region='full', size='full'):
         if not ident:
-            raise RequirementError("Images must have a real identity (Image['@id'] cannot be empty)")            
+            raise RequirementError("Images must have a real identity (Image['@id'] cannot be empty)")
         return Image(self, ident, label, iiif, region, size)
 
     def audio(self, ident, label=""):
         if not ident:
-            raise RequirementError("Audio must have a real identity (Audio['@id'] cannot be empty)")            
-        return Audio(self, ident, label)        
+            raise RequirementError("Audio must have a real identity (Audio['@id'] cannot be empty)")
+        return Audio(self, ident, label)
 
     def choice(self, default, rest):
         return Choice(self, default, rest)
@@ -293,10 +292,10 @@ class ManifestFactory(object):
         return Service(self, ident, label, context, profile)
 
 ### Note: id, type and context are always @(prop) in the output
-### Cannot have type --> dc:type, for example 
+### Cannot have type --> dc:type, for example
+
 
 class BaseMetadataObject(object):
-
     _properties = ['id', 'type', 'label', 'metadata', 'description', 'thumbnail',
         'attribution', 'license', 'logo', 'service', 'seeAlso', 'within', 'related',
         'viewingHint', 'viewingDirection']
@@ -342,8 +341,8 @@ class BaseMetadataObject(object):
         elif which[0] != '_' and not type(value) in [str, unicode, list, dict] and not which in self._integer_properties and \
             not isinstance(value, BaseMetadataObject) and not isinstance(value, OrderedDict):
             # Raise Exception for standard prop set to non standard value
-            # not perfect but stops the worst cases.                
-            raise DataError("%s['%s'] does not accept a %s" % (self._type, which, type(value).__name__), self)                
+            # not perfect but stops the worst cases.
+            raise DataError("%s['%s'] does not accept a %s" % (self._type, which, type(value).__name__), self)
         elif which in self._integer_properties and type(value) != int:
             raise DataError("%s['%s'] does not accept a %s, only an integer" % (self._type, which, type(value).__name__), self)
         elif value and which in self._object_properties and not self.test_object(value):
@@ -407,7 +406,7 @@ class BaseMetadataObject(object):
                         raise DataError("Attributes not allowed on %s tag" % (elm.tag), self)
                     if not elm.tag in GOOD_HTML_TAGS:
                         self.maybe_warn("Risky HTML tag '%s' in '%s'" % (elm.tag, data))
-                # Cannot keep CDATA sections separate from text when parsing in LXML :(        
+                # Cannot keep CDATA sections separate from text when parsing in LXML :(
 
     def langhash_to_jsonld(self, lh, html=True):
         # {"fr": "something in french", "en": "something in english", "de html" : "<span>German HTML</span>"}
@@ -425,7 +424,7 @@ class BaseMetadataObject(object):
                 if k:
                     l.append(OrderedDict([("@value",v), ("@language",k)]))
                 else:
-                    l.append(v)        
+                    l.append(v)
             else:
                 l.append(OrderedDict([("@value",v), ("@language",k)]))
         return l
@@ -435,7 +434,7 @@ class BaseMetadataObject(object):
         # ... or:  {'label': langhash, 'value': langhash}
         # Set: {"label":label, "value":value}
         # Really add_metadata, as won't overwrite
-        
+
         if type(mdhash) != dict:
             raise ValueError("set_metadata takes a dict()")
 
@@ -443,7 +442,7 @@ class BaseMetadataObject(object):
         # triggering __setattr__ on the resource ;)
         md = self.metadata
 
-        mdk = mdhash.keys() 
+        mdk = mdhash.keys()
         mdk.sort()
         if mdk == ['label', 'value']:
             # Work around to allow multiple languages for label;
@@ -489,7 +488,7 @@ class BaseMetadataObject(object):
                         nl.append(i)
                 elif type(i) == dict:
                     # {"en:"Something",fr":"Quelque Chose"}
-                    nl.extend(self.langhash_to_jsonld(i, html))            
+                    nl.extend(self.langhash_to_jsonld(i, html))
                 else:
                     nl.append(i)
             value = nl
@@ -530,7 +529,7 @@ class BaseMetadataObject(object):
             if type(this.thumbnail) == list:
                 pass
             return this.thumbnail
-        else: 
+        else:
             return None
 
     def toJSON(self, top=False):
@@ -601,7 +600,7 @@ class BaseMetadataObject(object):
         return False
 
     def _single_toJSON(self, instance, sinfo, prop, minimalOveride=False):
-        # duck typing. Bite me. 
+        # duck typing. Bite me.
         typ = sinfo.get('subclass', None)
         minimal = sinfo.get('minimal', False)
         if minimalOveride:
@@ -636,7 +635,7 @@ class BaseMetadataObject(object):
                 out = json.dumps(js, separators=(',',':'))
             else:
                 out = json.dumps(js, indent=2)
-        return out         
+        return out
 
     def toString(self, compact=True):
         js = self.toJSON(top=True)
@@ -654,10 +653,10 @@ class BaseMetadataObject(object):
         mdb = self._factory.metadata_base
         if not myid.startswith(mdb):
             raise ConfigurationError("The @id of that object is not the base URI in the Factory")
-        fp = myid[len(mdb):]    
+        fp = myid[len(mdb):]
         bits = fp.split('/')
         if len(bits) > 1:
-            mydir = os.path.join(mdd, '/'.join(bits[:-1]))        
+            mydir = os.path.join(mdd, '/'.join(bits[:-1]))
             try:
                 os.makedirs(mydir)
             except OSError, e:
@@ -826,11 +825,11 @@ class Sequence(BaseMetadataObject):
         else:
             raise RequirementError("Cannot set the startCanvas of a Sequence to a Canvas that is not in the Sequence")
 
-### Canvas is a ContentResource as it can be segmented using oa:SpecificResource
 
+### Canvas is a ContentResource as it can be segmented using oa:SpecificResource
 class Canvas(ContentResource):
     _type = "sc:Canvas"
-    _uri_segment = "canvas/"    
+    _uri_segment = "canvas/"
     _required = ["@id", "label", "height", "width"]
     _warn = ["images"]
     _viewing_hints = CVS_VIEWINGHINTS
@@ -934,7 +933,7 @@ class Annotation(BaseMetadataObject):
 
     def stylesheet(self, css, cls):
         # This has to go here, as need to modify both Annotation and Resource
-        ss = OrderedDict([("@type", ["oa:CssStyle", "cnt:ContentAsText"]), 
+        ss = OrderedDict([("@type", ["oa:CssStyle", "cnt:ContentAsText"]),
             ("format", "text/css"), ("chars", css)])
         self.stylesheet = ss
         if not self.resource:
@@ -1030,7 +1029,7 @@ class Image(ContentResource):
             self.service = ImageService(factory, ident)
 
             if factory.default_image_api_version[0] == '1':
-                self.id = factory.default_base_image_uri + '/' + ident + '/%s/%s/0/native.jpg' % (region, size)                
+                self.id = factory.default_base_image_uri + '/' + ident + '/%s/%s/0/native.jpg' % (region, size)
             else:
                 self.id = factory.default_base_image_uri + '/' + ident + '/%s/%s/0/default.jpg' % (region, size)
             self._identifier = ident
@@ -1133,7 +1132,7 @@ class Choice(BaseMetadataObject):
 
 class AnnotationList(BaseMetadataObject):
     _type = "sc:AnnotationList"
-    _uri_segment = "list/"    
+    _uri_segment = "list/"
     _required = ["@id"]
     _warn = []
     _canvas = None
@@ -1165,7 +1164,7 @@ class AnnotationList(BaseMetadataObject):
 
 class Range(BaseMetadataObject):
     _type = "sc:Range"
-    _uri_segment = "range/"    
+    _uri_segment = "range/"
     _required = ["@id", "label"]
     _warn = ['canvases']
     _extra_properties = ['startCanvas']
@@ -1179,11 +1178,11 @@ class Range(BaseMetadataObject):
 
     def __init__(self, factory, ident="", label="", mdhash={}):
         super(Range, self).__init__(factory, ident, label, mdhash)
-        self.canvases = []    
+        self.canvases = []
         self.ranges = []
 
     def __setattr__(self, which, value):
-        if which == 'viewingHint': 
+        if which == 'viewingHint':
             if value == 'top':
                 # unset canvases from _warn
                 try:
@@ -1225,7 +1224,7 @@ class Range(BaseMetadataObject):
         return r
 
     def add_range(self, rng):
-        self.ranges.append(rng.id)        
+        self.ranges.append(rng.id)
 
     def set_start_canvas(self, cvs):
         if type(cvs) in [unicode, str]:
@@ -1244,7 +1243,7 @@ class Range(BaseMetadataObject):
 
 
 class Layer(BaseMetadataObject):
-    _type = "sc:Layer"        
+    _type = "sc:Layer"
     _uri_segment = "layer/"
     _required = ["@id", "label"]
     _warn = []
@@ -1258,7 +1257,6 @@ class Service(BaseMetadataObject):
     _extra_properties = ['context', 'profile']
     context = ""
 
-
     def __init__(self, factory, ident, label="", context="", profile=""):
         if not ident.startswith('http'):
             raise RequirementError("Services must have an http[s] URI")
@@ -1267,22 +1265,23 @@ class Service(BaseMetadataObject):
         self.profile = profile
 
     def __setattr__(self, which, value):
-        if which == "context":    
-            object.__setattr__(self, which, value)            
+        if which == "context":
+            object.__setattr__(self, which, value)
         else:
             BaseMetadataObject.__setattr__(self, which, value)
+
 
 class ImageService(Service):
     _type = ""
     _uri_segment = ""
     _required = ["@id", "@context"]
     _warn = ["profile"]
-    context = ""    
+    context = ""
 
     def __init__(self, factory, ident, label="", context="", profile=""):
         if not ident.startswith('http'):
             # prepend factory.base before passing up
-            ident = factory.default_base_image_uri + '/' + ident    
+            ident = factory.default_base_image_uri + '/' + ident
 
         BaseMetadataObject.__init__(self, factory, ident, label)
 
@@ -1296,20 +1295,20 @@ class ImageService(Service):
             self.profile = profile
 
 # Need to set these at the end, after the classes have been defined
-Collection._structure_properties = {'collections' : {'subclass': Collection, 'minimal': True, 'list': True}, 
+Collection._structure_properties = {'collections' : {'subclass': Collection, 'minimal': True, 'list': True},
                                     'manifests': {'subclass': Manifest, 'minimal': True, 'list': True}}
-Manifest._structure_properties = {'sequences': {'subclass': Sequence, 'list':True}, 
+Manifest._structure_properties = {'sequences': {'subclass': Sequence, 'list':True},
                                   'structures': {'subclass': Range, 'list':True}}
 Sequence._structure_properties = {'canvases': {'subclass':Canvas, 'list':True}}
-Canvas._structure_properties = {'images': {'subclass': Annotation, 'list':True}, 
+Canvas._structure_properties = {'images': {'subclass': Annotation, 'list':True},
                                 'otherContent':  {'subclass': AnnotationList, 'minimal':True, 'list':True}}
 AnnotationList._structure_properties = {'resources': {'subclass': Annotation, 'list':True}}
 
 Range._structure_properties = {'canvases': {'subclass':Canvas, 'list':True, 'minimal':True}, # Could be canvas.json#xywh= ...
                                'ranges': {'subclass': Range, 'list':True, 'minimal':True}}
 
-# Don't type check these as they're Content subclasses 
-Annotation._structure_properties = {'resource': {}, 'on':{'subclass': Canvas}}  
+# Don't type check these as they're Content subclasses
+Annotation._structure_properties = {'resource': {}, 'on':{'subclass': Canvas}}
 SpecificResource._structure_properties = {'full':{}}
 Choice._structure_properties = {'default':{}, 'item':{}}
 
@@ -1319,7 +1318,7 @@ for c in [Collection, Manifest, Sequence, Canvas, Range, Layer, Image, Annotatio
     c._structure_properties['thumbnail'] = {'thumbnail': {'subclass':Image}}
 
 if __name__ == "__main__":
-    factory = ManifestFactory()    
+    factory = ManifestFactory()
     factory.set_base_metadata_uri("http://www.example.org/iiif/prezi/")
     factory.set_base_image_uri("http://www.example.org/iiif/image/")
     factory.set_iiif_image_info(version="2.0", lvl="2")
@@ -1327,11 +1326,11 @@ if __name__ == "__main__":
     mf = factory.manifest(label="Manifest")
     mf.viewingHint = "paged"
 
-    seq = mf.sequence() 
+    seq = mf.sequence()
     for x in range(1):
-        cvs = seq.canvas(ident="c%s" % x, label="Canvas %s" % x)  
+        cvs = seq.canvas(ident="c%s" % x, label="Canvas %s" % x)
         cvs.set_hw(1000,1000)
-        anno = cvs.annotation()  
+        anno = cvs.annotation()
         img = factory.image("f1r.c", iiif=True)
         img2 = factory.image("f1r", iiif=True)
         chc = anno.choice(img, [img2])
